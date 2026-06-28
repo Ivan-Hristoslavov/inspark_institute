@@ -6,7 +6,7 @@ import { ArrowRight, Sparkles, Filter } from "lucide-react";
 import { useServices } from "@/hooks/useServices";
 import Pagination from "@/components/Pagination";
 import type { Service } from "@/hooks/useServices";
-import { aestheticsColors } from "@/config/colors";
+import { brandColors } from "@/config/colors";
 import { typography, textColors, layout } from "@/config/typography";
 import { PriceWithDiscount } from "@/components/PriceWithDiscount";
 import { ServiceDetailsModal } from "@/components/ServiceDetailsModal";
@@ -132,7 +132,7 @@ export default function SectionFeaturedServices() {
 
   if (isLoading) {
     return (
-      <section className="py-6 sm:py-10 md:py-12 bg-egp-beige-lighter dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <section className="py-6 sm:py-10 md:py-12 bg-warm-beige-lighter dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         <div className={layout.container}>
           <div className="text-center mb-4 sm:mb-6 md:mb-8">
             <div className={`inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1 sm:py-2 ${badgeBackgroundClass} text-xs sm:text-sm font-semibold mb-2 sm:mb-4 ${textColors.heading}`}>
@@ -143,7 +143,7 @@ export default function SectionFeaturedServices() {
               Featured Services
             </h2>
             <p className={`${typography.lead} max-w-2xl mx-auto px-4`}>
-              Discover our most popular aesthetic treatments
+              Discover our most popular treatments
             </p>
           </div>
           
@@ -164,7 +164,7 @@ export default function SectionFeaturedServices() {
 
   if (!isLoading && filteredServices.length === 0) {
     return (
-      <section className="py-6 sm:py-10 md:py-12 bg-egp-beige-lighter dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <section className="py-6 sm:py-10 md:py-12 bg-warm-beige-lighter dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         <div className={layout.container}>
           <div className="text-center mb-4 sm:mb-6 md:mb-8">
             <div className={`inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1 sm:py-2 ${badgeBackgroundClass} text-xs sm:text-sm font-semibold mb-2 sm:mb-4 ${textColors.heading}`}>
@@ -175,7 +175,7 @@ export default function SectionFeaturedServices() {
               Featured Services
             </h2>
             <p className={`${typography.lead} max-w-2xl mx-auto px-4`}>
-              Discover our most popular aesthetic treatments
+              Discover our most popular treatments
             </p>
           </div>
           
@@ -190,7 +190,7 @@ export default function SectionFeaturedServices() {
   }
 
   return (
-    <section id="featured-services" className="py-6 sm:py-10 md:py-12 bg-egp-beige-lighter dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <section id="featured-services" className="py-6 sm:py-10 md:py-12 bg-warm-beige-lighter dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header - compact */}
         <div className="text-center mb-4 sm:mb-6 md:mb-8">
@@ -202,7 +202,7 @@ export default function SectionFeaturedServices() {
             Featured Services
           </h2>
           <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
-            Discover our most popular aesthetic treatments
+            Discover our most popular treatments
           </p>
         </div>
 
@@ -211,8 +211,8 @@ export default function SectionFeaturedServices() {
           <div className="mb-5 sm:mb-6">
             <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-white/70 dark:bg-gray-800/50 border border-[#e4d9c8] dark:border-gray-700/80 shadow-sm">
               <div className="flex items-center gap-2 shrink-0">
-                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-egp-green/10 dark:bg-egp-green/20">
-                  <Filter className="w-4 h-4 text-egp-green dark:text-egp-green-light" />
+                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-perch/10 dark:bg-perch/20">
+                  <Filter className="w-4 h-4 text-perch dark:text-perch" />
                 </div>
                 <span className="text-sm font-semibold text-gray-700 dark:text-gray-200">Filter by</span>
               </div>
@@ -221,7 +221,7 @@ export default function SectionFeaturedServices() {
                   onClick={() => setSelectedCategory("all")}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 whitespace-nowrap ${
                     selectedCategory === "all"
-                      ? "bg-egp-green dark:bg-egp-green-dark text-white shadow-md"
+                      ? "bg-perch dark:bg-fir-1 text-white shadow-md"
                       : "bg-gray-100 dark:bg-gray-700/80 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 border border-transparent hover:border-gray-300 dark:hover:border-gray-600"
                   }`}
                 >
@@ -246,7 +246,7 @@ export default function SectionFeaturedServices() {
                     onClick={() => setSelectedCategory(category.id)}
                     className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 whitespace-nowrap ${
                       selectedCategory === category.id
-                        ? "bg-egp-green dark:bg-egp-green-dark text-white shadow-md"
+                        ? "bg-perch dark:bg-fir-1 text-white shadow-md"
                         : "bg-gray-100 dark:bg-gray-700/80 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 border border-transparent hover:border-gray-300 dark:hover:border-gray-600"
                     }`}
                   >
@@ -266,7 +266,7 @@ export default function SectionFeaturedServices() {
             return (
               <div
                 key={service.id}
-                className="group relative bg-white dark:bg-egp-green rounded-xl sm:rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 border border-gray-200/80 dark:border-egp-green-dark cursor-pointer flex flex-col"
+                className="group relative bg-white dark:bg-perch rounded-xl sm:rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 border border-gray-200/80 dark:border-fir-1 cursor-pointer flex flex-col"
                 onClick={() => setSelectedService(service)}
               >
                 {/* Image */}
@@ -293,7 +293,7 @@ export default function SectionFeaturedServices() {
                   
                   {/* Featured Badge */}
                   <div className="absolute top-1.5 left-1.5 sm:top-3 sm:left-3 z-10">
-                    <span className="inline-flex items-center px-2 py-0.5 sm:px-2.5 sm:py-1 text-white text-[9px] sm:text-[10px] font-bold rounded-full shadow-lg backdrop-blur-sm" style={{ backgroundColor: aestheticsColors.green.DEFAULT }}>
+                    <span className="inline-flex items-center px-2 py-0.5 sm:px-2.5 sm:py-1 text-white text-[9px] sm:text-[10px] font-bold rounded-full shadow-lg backdrop-blur-sm" style={{ backgroundColor: brandColors.green.DEFAULT }}>
                       <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-0.5 sm:mr-1" />
                       FEATURED
                     </span>
@@ -376,7 +376,7 @@ export default function SectionFeaturedServices() {
                         setSelectedService(service);
                       }}
                       variant="primary"
-                      className="w-full !bg-transparent border-2 border-egp-green dark:border-egp-beige !text-egp-green dark:!text-egp-beige hover:!bg-egp-green hover:!text-white dark:hover:!bg-egp-beige dark:hover:!text-gray-900 rounded-xl font-semibold transition-all duration-300 shadow-sm hover:shadow-md"
+                      className="w-full !bg-transparent border-2 border-perch dark:border-warm-beige !text-perch dark:!text-warm-beige hover:!bg-perch hover:!text-white dark:hover:!bg-warm-beige dark:hover:!text-gray-900 rounded-xl font-semibold transition-all duration-300 shadow-sm hover:shadow-md"
                       endContent={<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
                     >
                       Learn More

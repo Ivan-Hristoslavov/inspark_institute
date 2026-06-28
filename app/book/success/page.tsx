@@ -413,7 +413,7 @@ function BookingSuccessContent() {
           <div className="hidden print-only print-logo">
             <Image
               src="/logos/LOGO_LONG BLACK.png"
-              alt="EGP Aesthetics"
+              alt="Inspark Institute"
               width={300}
               height={54}
               className="mx-auto"
@@ -430,7 +430,7 @@ function BookingSuccessContent() {
               Booking Confirmed!
             </h1>
             <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 font-montserrat font-light">
-              Thank you for choosing EGP Aesthetics London
+              Thank you for choosing Inspark Institute
             </p>
           </div>
 
@@ -444,8 +444,8 @@ function BookingSuccessContent() {
           <div className="p-4 sm:p-5">
             <div className="divide-y divide-[#e4d9c8] dark:divide-gray-700 [&>div:first-child]:pt-0">
               <div className="flex items-center gap-3 py-3">
-                <div className="w-10 h-10 rounded-lg bg-egp-green/10 dark:bg-egp-green/20 flex items-center justify-center flex-shrink-0">
-                  <Calendar className="w-5 h-5 text-egp-green dark:text-egp-beige" />
+                <div className="w-10 h-10 rounded-lg bg-perch/10 dark:bg-perch/20 flex items-center justify-center flex-shrink-0">
+                  <Calendar className="w-5 h-5 text-perch dark:text-warm-beige" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Date</p>
@@ -460,8 +460,8 @@ function BookingSuccessContent() {
                 </div>
               </div>
               <div className="flex items-center gap-3 py-3">
-                <div className="w-10 h-10 rounded-lg bg-egp-green/10 dark:bg-egp-green/20 flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-5 h-5 text-egp-green dark:text-egp-beige" />
+                <div className="w-10 h-10 rounded-lg bg-perch/10 dark:bg-perch/20 flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-5 h-5 text-perch dark:text-warm-beige" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Time</p>
@@ -471,8 +471,8 @@ function BookingSuccessContent() {
                 </div>
               </div>
               <div className="flex items-center gap-3 py-3">
-                <div className="w-10 h-10 rounded-lg bg-egp-green/10 dark:bg-egp-green/20 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5 text-egp-green dark:text-egp-beige" />
+                <div className="w-10 h-10 rounded-lg bg-perch/10 dark:bg-perch/20 flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-5 h-5 text-perch dark:text-warm-beige" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Booking Number</p>
@@ -483,8 +483,8 @@ function BookingSuccessContent() {
               </div>
               {bookingDetails.teamMember && (
                 <div className="flex items-center gap-3 py-3">
-                  <div className="w-10 h-10 rounded-lg bg-egp-green/10 dark:bg-egp-green/20 flex items-center justify-center flex-shrink-0">
-                    <User className="w-5 h-5 text-egp-green dark:text-egp-beige" />
+                  <div className="w-10 h-10 rounded-lg bg-perch/10 dark:bg-perch/20 flex items-center justify-center flex-shrink-0">
+                    <User className="w-5 h-5 text-perch dark:text-warm-beige" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Practitioner</p>
@@ -514,8 +514,8 @@ function BookingSuccessContent() {
             <div className="divide-y divide-[#e4d9c8] dark:divide-gray-700 [&>div:first-child]:pt-0">
               {bookingDetails.customerName && (
                 <div className="flex items-center gap-3 py-3">
-                  <div className="w-10 h-10 rounded-lg bg-egp-green/10 dark:bg-egp-green/20 flex items-center justify-center flex-shrink-0">
-                    <User className="w-5 h-5 text-egp-green dark:text-egp-beige" />
+                  <div className="w-10 h-10 rounded-lg bg-perch/10 dark:bg-perch/20 flex items-center justify-center flex-shrink-0">
+                    <User className="w-5 h-5 text-perch dark:text-warm-beige" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Name</p>
@@ -527,8 +527,8 @@ function BookingSuccessContent() {
               )}
               {bookingDetails.customerEmail && (
                 <div className="flex items-center gap-3 py-3">
-                  <div className="w-10 h-10 rounded-lg bg-egp-green/10 dark:bg-egp-green/20 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5 text-egp-green dark:text-egp-beige" />
+                  <div className="w-10 h-10 rounded-lg bg-perch/10 dark:bg-perch/20 flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-5 h-5 text-perch dark:text-warm-beige" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Email</p>
@@ -540,8 +540,8 @@ function BookingSuccessContent() {
               )}
               {bookingDetails.customerPhone && (
                 <div className="flex items-center gap-3 py-3">
-                  <div className="w-10 h-10 rounded-lg bg-egp-green/10 dark:bg-egp-green/20 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 text-egp-green dark:text-egp-beige" />
+                  <div className="w-10 h-10 rounded-lg bg-perch/10 dark:bg-perch/20 flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 text-perch dark:text-warm-beige" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Phone</p>
@@ -574,7 +574,7 @@ function BookingSuccessContent() {
                       Qty: {service.quantity}
                     </p>
                   </div>
-                  <p className="font-bold text-base text-egp-green dark:text-egp-beige whitespace-nowrap flex-shrink-0">
+                  <p className="font-bold text-base text-perch dark:text-warm-beige whitespace-nowrap flex-shrink-0">
                     £{service.price * service.quantity}
                   </p>
                 </li>

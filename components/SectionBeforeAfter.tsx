@@ -35,7 +35,7 @@ export default function SectionBeforeAfter() {
   // If no gallery items, show placeholder
   if (loading) {
     return (
-      <section className="py-8 sm:py-10 md:py-12 bg-egp-beige-lighter dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <section className="py-8 sm:py-10 md:py-12 bg-warm-beige-lighter dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         <div className={layout.container}>
           <div className="text-center">
             <Spinner size="lg" color="primary" />
@@ -47,7 +47,7 @@ export default function SectionBeforeAfter() {
 
   if (error || beforeAfterItems.length === 0) {
     return (
-      <section className="py-8 sm:py-10 md:py-12 bg-egp-beige-lighter dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <section className="py-8 sm:py-10 md:py-12 bg-warm-beige-lighter dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         <div className={layout.container}>
           <div className="text-center">
             <div className={`inline-block px-3 sm:px-4 py-1.5 sm:py-2 ${badgeBackgroundClass} text-xs sm:text-sm font-semibold mb-3 sm:mb-4 text-[#6b5f4b] dark:text-gray-200`}>

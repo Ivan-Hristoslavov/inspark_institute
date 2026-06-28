@@ -76,7 +76,7 @@ export async function POST(
         const paymentLinkData = await createPaymentLink({
           amount: invoice.total_amount,
           currency: currency,
-          description: `Invoice ${invoice.invoice_number} - ${invoice.booking?.service || invoice.manual_service || 'Aesthetic Treatment'}`,
+          description: `Invoice ${invoice.invoice_number} - ${invoice.booking?.service || invoice.manual_service || 'treatment'}`,
           customerEmail: invoice.customer.email,
           metadata: {
             invoice_id: invoice.id,
@@ -319,7 +319,7 @@ function generateEmailBody(invoice: any, paymentLink: string | null, hasAttachme
   return `
 Dear ${customerName},
 
-Thank you for choosing ${invoice.company_name} for your aesthetic treatment.
+Thank you for choosing ${invoice.company_name} for your treatment.
 
 Please find attached your invoice PDF and details for the services provided:
 
@@ -327,7 +327,7 @@ Invoice Details:
 - Invoice Number: ${invoice.invoice_number}
 - Invoice Date: ${invoiceDate}
 - Due Date: ${dueDate}
-- Service: ${invoice.booking?.service || invoice.manual_service || 'Aesthetic Treatment'}
+- Service: ${invoice.booking?.service || invoice.manual_service || 'treatment'}
 - Total Amount: ${currencySymbol}${invoice.total_amount.toFixed(2)}
 
 ${invoice.notes ? `Additional Notes:\n${invoice.notes}\n\n` : ''}
@@ -412,7 +412,7 @@ body{margin:0;padding:0;font-family:Georgia,serif;background:#f5f3ef;color:#1c19
 <div class="card-title">Invoice details</div>
 <div class="row">${invoice.invoice_number} · ${invoiceDate}</div>
 <div class="row">Due ${dueDate}</div>
-<div class="row">${invoice.booking?.service || invoice.manual_service || 'Aesthetic Treatment'}</div>
+<div class="row">${invoice.booking?.service || invoice.manual_service || 'treatment'}</div>
 <div class="row"><span class="amt">${currencySymbol}${invoice.total_amount.toFixed(2)}</span></div>
 </div>
 

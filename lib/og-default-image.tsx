@@ -54,7 +54,7 @@ export function createDefaultOgImageResponse() {
               color: "#a8a29e",
             }}
           >
-            Aesthetic clinic · London, UK
+            institute · London, UK
           </div>
         </div>
       </div>

@@ -749,10 +749,10 @@ export default function PaymentsPage() {
           <div className="flex items-center justify-between gap-2">
             <div className="min-w-0">
                 <p className="text-xs sm:text-sm font-medium text-default-500">Transactions</p>
-                <p className="text-lg sm:text-xl font-bold text-[#464C45] dark:text-egp-beige">{filteredPayments.length}</p>
+                <p className="text-lg sm:text-xl font-bold text-[#464C45] dark:text-warm-beige">{filteredPayments.length}</p>
               </div>
               <div className="p-2 sm:p-2.5 bg-[#464C45]/10 dark:bg-[#464C45]/30 rounded-full flex-shrink-0">
-                <CreditCard className="w-5 h-5 text-[#464C45] dark:text-egp-beige" />
+                <CreditCard className="w-5 h-5 text-[#464C45] dark:text-warm-beige" />
             </div>
             </div>
           </CardBody>

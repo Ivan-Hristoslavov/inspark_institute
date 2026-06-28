@@ -1375,7 +1375,7 @@ export default function BookingsPage() {
                         <option value="Dermal Fillers">Dermal Fillers</option>
                         <option value="Skin Treatments">Skin Treatments</option>
                         <option value="Consultation">Consultation</option>
-                        <option value="Facial Aesthetics">Facial Aesthetics</option>
+                        <option value="Treatments">Treatments</option>
                         <option value="Body Contouring">Body Contouring</option>
                       </select>
                     </div>
@@ -1605,7 +1605,7 @@ export default function BookingsPage() {
                         <option value="Dermal Fillers">Dermal Fillers</option>
                         <option value="Skin Treatments">Skin Treatments</option>
                         <option value="Consultation">Consultation</option>
-                        <option value="Facial Aesthetics">Facial Aesthetics</option>
+                        <option value="Treatments">Treatments</option>
                         <option value="Body Contouring">Body Contouring</option>
                       </select>
                     </div>

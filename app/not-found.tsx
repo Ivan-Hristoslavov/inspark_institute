@@ -7,13 +7,13 @@ import { FirstVisitDiscountFormWrapper } from "@/components/FirstVisitDiscountFo
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-egp-beige-lighter dark:bg-egp-green-darker flex items-center justify-center px-4 transition-colors duration-300">
+    <div className="min-h-screen bg-warm-beige-lighter dark:bg-fir-2 flex items-center justify-center px-4 transition-colors duration-300">
       <Card className="max-w-md w-full" shadow="lg">
         <CardBody className="text-center py-8">
           <div className="mb-8">
-            <div className="w-24 h-24 bg-egp-beige-dark dark:bg-egp-green-dark rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="w-24 h-24 bg-warm-beige-dark dark:bg-fir-1 rounded-full flex items-center justify-center mx-auto mb-6">
               <svg
-                className="w-12 h-12 text-egp-green dark:text-white"
+                className="w-12 h-12 text-perch dark:text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -42,7 +42,7 @@ export default function NotFound() {
               as={Link}
               href="/"
               size="lg"
-              className="bg-gradient-to-r from-egp-green via-egp-green-light to-egp-green text-white"
+              className="bg-gradient-to-r from-perch via-perch to-perch text-white"
               startContent={<Home className="w-5 h-5" />}
             >
               Go Home
@@ -51,11 +51,11 @@ export default function NotFound() {
             <div className="text-sm text-gray-500 dark:text-gray-400">
               <p>Need help? Contact us at{" "}
                 <a
-                  href={`mailto:${process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "info@egpaesthetics.co.uk"}`}
-                  className="text-egp-green dark:text-white hover:underline inline-flex items-center gap-1"
+                  href={`mailto:${process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "info@insparkinstitute.co.uk"}`}
+                  className="text-perch dark:text-white hover:underline inline-flex items-center gap-1"
                 >
                   <Mail className="w-4 h-4" />
-                  {process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "info@egpaesthetics.co.uk"}
+                  {process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "info@insparkinstitute.co.uk"}
                 </a>
               </p>
             </div>

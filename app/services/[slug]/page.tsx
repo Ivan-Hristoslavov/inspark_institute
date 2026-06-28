@@ -67,7 +67,7 @@ const servicesData = {
     category: 'Face',
     price: 'From £50',
     duration: '30 minutes',
-    description: 'Start your aesthetic journey with a personalised consultation',
+    description: 'Start your journey with a personalised consultation',
     benefits: [
       'Expert skin analysis and assessment',
       'Personalised treatment recommendations',
@@ -385,7 +385,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   
   const serviceTitle = dbService?.name || staticService?.title || 'Service';
   const serviceDescription = toMetaDescription(
-    dbService?.description || staticService?.description || `Book ${serviceTitle} at our London aesthetic clinic.`
+    dbService?.description || staticService?.description || `Book ${serviceTitle} at our London institute.`
   );
 
   return {
@@ -476,18 +476,18 @@ export default async function ServicePage({ params }: PageProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-egp-green-darker flex flex-col">
+    <div className="min-h-screen bg-white dark:bg-fir-2 flex flex-col">
       {/* Hero Section */}
-      <section className="py-12 md:py-16 bg-gradient-to-br from-egp-beige-lighter to-egp-beige-light dark:from-egp-green-dark dark:to-egp-green-darker">
+      <section className="py-12 md:py-16 bg-gradient-to-br from-warm-beige-lighter to-warm-beige-light dark:from-fir-1 dark:to-fir-2">
         <div className={layout.container}>
           <div className="max-w-4xl mx-auto text-center">
             {isPopular && (
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-egp-green/20 dark:bg-egp-green-dark rounded-full text-egp-green dark:text-white text-xs font-semibold mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-perch/20 dark:bg-fir-1 rounded-full text-perch dark:text-white text-xs font-semibold mb-4">
                 <Star className="w-3 h-3" />
                 <span>Popular Treatment</span>
               </div>
             )}
-            <div className="inline-block px-3 py-1.5 bg-white/80 dark:bg-egp-green-dark rounded-full text-egp-green dark:text-white text-xs font-medium mb-4">
+            <div className="inline-block px-3 py-1.5 bg-white/80 dark:bg-fir-1 rounded-full text-perch dark:text-white text-xs font-medium mb-4">
               {serviceCategory}
             </div>
             <h1 className={`${typography.headingPage} ${textColors.heading} mb-4`}>
@@ -507,7 +507,7 @@ export default async function ServicePage({ params }: PageProps) {
                   }
                 }}
                 size="lg"
-                className="bg-egp-green hover:bg-egp-green-dark text-white"
+                className="bg-perch hover:bg-fir-1 text-white"
                 startContent={<Calendar className="w-5 h-5" />}
               >
                 Book Consultation - {typeof servicePrice === 'number' ? `£${servicePrice}` : servicePrice}
@@ -517,7 +517,7 @@ export default async function ServicePage({ params }: PageProps) {
                 href={`tel:${siteConfig.contact.phone}`}
                 variant="bordered"
                 size="lg"
-                className="border-egp-green text-egp-green dark:text-white dark:border-egp-green"
+                className="border-perch text-perch dark:text-white dark:border-perch"
                 startContent={<Phone className="w-5 h-5" />}
               >
                 Call Us
@@ -542,7 +542,7 @@ export default async function ServicePage({ params }: PageProps) {
                 </p>
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="flex items-center gap-2">
-                    <Clock className="w-5 h-5 text-egp-green" />
+                    <Clock className="w-5 h-5 text-perch" />
                     <div>
                       <div className="font-semibold text-sm text-gray-900 dark:text-white">Duration</div>
                       <div className="text-xs text-gray-600 dark:text-gray-300">{serviceDuration}</div>
@@ -550,7 +550,7 @@ export default async function ServicePage({ params }: PageProps) {
                   </div>
                   {normalizedService.results_duration_weeks && (
                     <div className="flex items-center gap-2">
-                      <Shield className="w-5 h-5 text-egp-green" />
+                      <Shield className="w-5 h-5 text-perch" />
                       <div>
                         <div className="font-semibold text-sm text-gray-900 dark:text-white">Results</div>
                         <div className="text-xs text-gray-600 dark:text-gray-300">{normalizedService.results_duration_weeks} weeks</div>
@@ -569,7 +569,7 @@ export default async function ServicePage({ params }: PageProps) {
                   <ul className="space-y-3">
                     {serviceBenefits.map((benefit: string, index: number) => (
                       <li key={index} className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-egp-green mr-2 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-perch mr-2 mt-0.5 flex-shrink-0" />
                         <span className="text-sm text-gray-600 dark:text-gray-300">{benefit}</span>
                       </li>
                     ))}
@@ -583,13 +583,13 @@ export default async function ServicePage({ params }: PageProps) {
 
       {/* Procedure Steps */}
       {normalizedService.details && (
-        <section className="py-12 md:py-16 bg-egp-beige-lighter dark:bg-egp-green-dark">
+        <section className="py-12 md:py-16 bg-warm-beige-lighter dark:bg-fir-1">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white text-center mb-8">
                 Treatment Process
               </h2>
-              <div className="bg-white dark:bg-egp-green rounded-xl p-6 shadow-md">
+              <div className="bg-white dark:bg-perch rounded-xl p-6 shadow-md">
                 <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
                   {normalizedService.details}
                 </p>
@@ -600,15 +600,15 @@ export default async function ServicePage({ params }: PageProps) {
       )}
 
       {/* Pricing & CTA - Fixed at bottom */}
-      <section className="py-12 md:py-16 bg-egp-beige-lighter dark:bg-egp-green-dark mt-auto">
+      <section className="py-12 md:py-16 bg-warm-beige-lighter dark:bg-fir-1 mt-auto">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white dark:bg-egp-green rounded-2xl p-6 md:p-8 shadow-lg">
+            <div className="bg-white dark:bg-perch rounded-2xl p-6 md:p-8 shadow-lg">
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
                   {serviceTitle}
                 </h2>
-                <div className="text-3xl font-bold text-egp-green dark:text-white mb-3">
+                <div className="text-3xl font-bold text-perch dark:text-white mb-3">
                   {typeof servicePrice === 'number' ? `£${servicePrice}` : servicePrice}
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">
@@ -626,7 +626,7 @@ export default async function ServicePage({ params }: PageProps) {
                     }
                   }}
                   size="lg"
-                  className="bg-egp-green hover:bg-egp-green-dark text-white"
+                  className="bg-perch hover:bg-fir-1 text-white"
                   startContent={<Calendar className="w-5 h-5" />}
                 >
                   Book Now
@@ -635,7 +635,7 @@ export default async function ServicePage({ params }: PageProps) {
                   as={Link}
                   href="/services"
                   size="lg"
-                  className="bg-egp-green hover:bg-egp-green-dark text-white"
+                  className="bg-perch hover:bg-fir-1 text-white"
                   startContent={<ArrowRight className="w-5 h-5" />}
                 >
                   View All Services

@@ -1,5 +1,5 @@
 /**
- * EGP typography and layout design tokens.
+ * Inspark Institute typography and layout design tokens.
  * Use these classes across the app for consistent responsive typography and spacing.
  * Mobile-first: base = mobile, sm/md/lg = larger breakpoints.
  */

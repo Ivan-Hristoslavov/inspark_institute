@@ -5,7 +5,7 @@ import { X, Gift, Mail, Percent, Copy, Check } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { setCookie, getCookie, COOKIE_NAMES } from "@/lib/cookies";
 import { usePathname } from "next/navigation";
-import { aestheticsColors } from "@/config/colors";
+import { brandColors } from "@/config/colors";
 
 export function FirstVisitDiscountForm() {
   const pathname = usePathname();
@@ -103,8 +103,8 @@ export function FirstVisitDiscountForm() {
         <div 
           className="relative rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden"
           style={{
-            backgroundColor: aestheticsColors.green.DEFAULT,
-            borderColor: aestheticsColors.green.border.dark,
+            backgroundColor: brandColors.green.DEFAULT,
+            borderColor: brandColors.green.border.dark,
             borderWidth: '2px',
             borderStyle: 'solid',
           }}
@@ -125,7 +125,7 @@ export function FirstVisitDiscountForm() {
               <div
                 className="w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center mx-auto mb-5 border-2 border-white/30 shadow-lg"
                 style={{
-                  background: `linear-gradient(to bottom right, ${aestheticsColors.green.DEFAULT}, ${aestheticsColors.green.dark})`,
+                  background: `linear-gradient(to bottom right, ${brandColors.green.DEFAULT}, ${brandColors.green.dark})`,
                 }}
               >
                 <Percent className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
@@ -209,7 +209,7 @@ export function FirstVisitDiscountForm() {
                         placeholder="First Name"
                         className="w-full px-4 py-3 text-base rounded-lg bg-white dark:bg-gray-800 border border-white/30 focus:bg-white dark:focus:bg-gray-700 focus:ring-2 focus:ring-white/50 focus:border-white/50 outline-none transition-all text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
                         style={{
-                          borderColor: aestheticsColors.green.border.DEFAULT,
+                          borderColor: brandColors.green.border.DEFAULT,
                         }}
                       />
                       <input
@@ -220,7 +220,7 @@ export function FirstVisitDiscountForm() {
                         placeholder="Your email address"
                         className="w-full px-4 py-3 text-base rounded-lg bg-white dark:bg-gray-800 border border-white/30 focus:bg-white dark:focus:bg-gray-700 focus:ring-2 focus:ring-white/50 focus:border-white/50 outline-none transition-all text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
                         style={{
-                          borderColor: aestheticsColors.green.border.DEFAULT,
+                          borderColor: brandColors.green.border.DEFAULT,
                         }}
                       />
                       <input
@@ -230,7 +230,7 @@ export function FirstVisitDiscountForm() {
                         placeholder="Mobile Number"
                         className="w-full px-4 py-3 text-base rounded-lg bg-white dark:bg-gray-800 border border-white/30 focus:bg-white dark:focus:bg-gray-700 focus:ring-2 focus:ring-white/50 focus:border-white/50 outline-none transition-all text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
                         style={{
-                          borderColor: aestheticsColors.green.border.DEFAULT,
+                          borderColor: brandColors.green.border.DEFAULT,
                         }}
                       />
                     </div>
@@ -263,8 +263,8 @@ export function FirstVisitDiscountForm() {
                   <div 
                     className="w-28 h-28 rounded-full flex items-center justify-center shadow-lg"
                     style={{
-                      background: `linear-gradient(to bottom right, ${aestheticsColors.green.DEFAULT}, ${aestheticsColors.green.dark})`,
-                      borderColor: aestheticsColors.green.border.light,
+                      background: `linear-gradient(to bottom right, ${brandColors.green.DEFAULT}, ${brandColors.green.dark})`,
+                      borderColor: brandColors.green.border.light,
                       borderWidth: '2px',
                       borderStyle: 'solid',
                     }}

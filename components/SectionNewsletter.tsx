@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Mail, Gift, Copy, Check, Sparkles } from "lucide-react";
 import { siteConfig } from "@/config/site";
-import { aestheticsColors } from "@/config/colors";
+import { brandColors } from "@/config/colors";
 import { Input, Button } from "@heroui/react";
 import { typography, layout, textColors } from "@/config/typography";
 
@@ -66,16 +66,16 @@ export default function SectionNewsletter() {
 
   if (status === "success") {
     return (
-      <section className="py-8 sm:py-10 md:py-12 bg-gradient-to-b from-egp-beige-lighter via-egp-beige-light/50 to-egp-beige-lighter dark:from-egp-green-darker dark:via-egp-green-dark dark:to-egp-green-darker">
+      <section className="py-8 sm:py-10 md:py-12 bg-gradient-to-b from-warm-beige-lighter via-warm-beige-light/50 to-warm-beige-lighter dark:from-fir-2 dark:via-fir-1 dark:to-fir-2">
         <div className={layout.container}>
           <div className="max-w-4xl mx-auto">
             {/* Success card - compact, uses more width */}
-            <div className="relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg border border-egp-beige-dark/30 dark:border-egp-green/30 bg-white dark:bg-egp-green-dark/95 backdrop-blur-sm">
+            <div className="relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg border border-warm-beige-dark/30 dark:border-perch/30 bg-white dark:bg-fir-1/95 backdrop-blur-sm">
               {/* Decorative top gradient strip */}
               <div
                 className="h-1.5 w-full"
                 style={{
-                  background: `linear-gradient(90deg, ${aestheticsColors.green.dark}, ${aestheticsColors.green.DEFAULT}, ${aestheticsColors.primary.dark}, ${aestheticsColors.green.DEFAULT})`,
+                  background: `linear-gradient(90deg, ${brandColors.green.dark}, ${brandColors.green.DEFAULT}, ${brandColors.primary.dark}, ${brandColors.green.DEFAULT})`,
                 }}
               />
 
@@ -86,19 +86,19 @@ export default function SectionNewsletter() {
                     <div
                       className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
                       style={{
-                        background: `linear-gradient(135deg, ${aestheticsColors.green.DEFAULT}, ${aestheticsColors.green.dark})`,
+                        background: `linear-gradient(135deg, ${brandColors.green.DEFAULT}, ${brandColors.green.dark})`,
                         boxShadow: `0 4px 12px -2px rgba(70, 76, 69, 0.3)`,
                       }}
                     >
                       <Sparkles className="w-6 h-6 text-white" strokeWidth={2} />
                     </div>
                     <div>
-                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-semibold uppercase tracking-wider bg-egp-green/10 dark:bg-white/10 text-egp-green dark:text-white/90 border border-egp-green/20 dark:border-white/20 mb-1">
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-semibold uppercase tracking-wider bg-perch/10 dark:bg-white/10 text-perch dark:text-white/90 border border-perch/20 dark:border-white/20 mb-1">
                         <Gift className="w-3 h-3" />
                         Exclusive Offer
                       </span>
                       <h3 className={`${typography.headingCard} ${textColors.heading}`}>
-                        Welcome to EGP Aesthetics!
+                        Welcome to Inspark Institute!
                       </h3>
                       <p className={`${typography.small} ${textColors.muted} mt-0.5`}>
                         Check your email for details.
@@ -111,8 +111,8 @@ export default function SectionNewsletter() {
                     <div
                       className="rounded-lg sm:rounded-xl p-4 sm:p-5 border-2"
                       style={{
-                        background: `linear-gradient(135deg, ${aestheticsColors.primary.light} 0%, ${aestheticsColors.neutral.light} 100%)`,
-                        borderColor: aestheticsColors.green.border.light,
+                        background: `linear-gradient(135deg, ${brandColors.primary.light} 0%, ${brandColors.neutral.light} 100%)`,
+                        borderColor: brandColors.green.border.light,
                         boxShadow: `inset 0 1px 0 rgba(255,255,255,0.8), 0 2px 8px -2px rgba(70, 76, 69, 0.12)`,
                       }}
                     >
@@ -121,7 +121,7 @@ export default function SectionNewsletter() {
                           <p className={`${typography.small} ${textColors.muted} mb-0.5 font-semibold uppercase tracking-wider`}>
                             Your Discount Code
                           </p>
-                          <p className="text-lg sm:text-xl font-bold tracking-[0.15em] text-egp-green dark:text-white select-all font-mono">
+                          <p className="text-lg sm:text-xl font-bold tracking-[0.15em] text-perch dark:text-white select-all font-mono">
                             {discountCode}
                           </p>
                         </div>
@@ -132,7 +132,7 @@ export default function SectionNewsletter() {
                             className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-200 ${
                               copied
                                 ? "bg-emerald-500/90 text-white shadow-md"
-                                : "bg-egp-green hover:bg-egp-green-dark text-white shadow-md hover:shadow-lg active:scale-[0.98]"
+                                : "bg-perch hover:bg-fir-1 text-white shadow-md hover:shadow-lg active:scale-[0.98]"
                             }`}
                           >
                             {copied ? <Check className="w-3.5 h-3.5" strokeWidth={2.5} /> : <Copy className="w-3.5 h-3.5" />}
@@ -141,7 +141,7 @@ export default function SectionNewsletter() {
                           <button
                             type="button"
                             onClick={() => setStatus("idle")}
-                            className="px-4 py-2 rounded-lg font-semibold text-sm bg-egp-beige-dark hover:bg-egp-beige-darker text-white dark:bg-egp-green dark:hover:bg-egp-green-dark transition-colors"
+                            className="px-4 py-2 rounded-lg font-semibold text-sm bg-warm-beige-dark hover:bg-warm-beige-dark text-white dark:bg-perch dark:hover:bg-fir-1 transition-colors"
                           >
                             Close
                           </button>
@@ -150,7 +150,7 @@ export default function SectionNewsletter() {
                     </div>
                     <p className={`${typography.small} ${textColors.muted}`}>
                       Use this code for{" "}
-                      <span className="font-bold text-egp-green dark:text-white">
+                      <span className="font-bold text-perch dark:text-white">
                         {siteConfig.newsletter.welcomeDiscountPercent}% off
                       </span>{" "}
                       your first treatment. Valid 30 days.
@@ -166,14 +166,14 @@ export default function SectionNewsletter() {
   }
 
   return (
-      <section className="py-6 sm:py-10 md:py-12 bg-egp-beige-lighter dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <section className="py-6 sm:py-10 md:py-12 bg-warm-beige-lighter dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         <div className={layout.container}>
           <div className="max-w-3xl mx-auto">
             <div 
               className="rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg"
               style={{
-                backgroundColor: aestheticsColors.green.DEFAULT,
-                borderColor: aestheticsColors.green.border.dark,
+                backgroundColor: brandColors.green.DEFAULT,
+                borderColor: brandColors.green.border.dark,
                 borderWidth: '2px',
                 borderStyle: 'solid',
               }}
@@ -208,7 +208,7 @@ export default function SectionNewsletter() {
                         inputWrapper: "bg-white dark:bg-gray-800",
                       }}
                       style={{
-                        borderColor: aestheticsColors.green.border.DEFAULT,
+                        borderColor: brandColors.green.border.DEFAULT,
                       }}
                     />
                     <Input
@@ -224,7 +224,7 @@ export default function SectionNewsletter() {
                         inputWrapper: "bg-white dark:bg-gray-800",
                       }}
                       style={{
-                        borderColor: aestheticsColors.green.border.DEFAULT,
+                        borderColor: brandColors.green.border.DEFAULT,
                       }}
                     />
                     <Input
@@ -240,7 +240,7 @@ export default function SectionNewsletter() {
                         inputWrapper: "bg-white dark:bg-gray-800",
                       }}
                       style={{
-                        borderColor: aestheticsColors.green.border.DEFAULT,
+                        borderColor: brandColors.green.border.DEFAULT,
                       }}
                     />
                   </div>
@@ -276,8 +276,8 @@ export default function SectionNewsletter() {
                 <div 
                   className="w-32 h-32 rounded-full flex items-center justify-center shadow-lg"
                   style={{
-                    background: `linear-gradient(to bottom right, ${aestheticsColors.green.DEFAULT}, ${aestheticsColors.green.dark})`,
-                    borderColor: aestheticsColors.green.border.light,
+                    background: `linear-gradient(to bottom right, ${brandColors.green.DEFAULT}, ${brandColors.green.dark})`,
+                    borderColor: brandColors.green.border.light,
                     borderWidth: '2px',
                     borderStyle: 'solid',
                   }}

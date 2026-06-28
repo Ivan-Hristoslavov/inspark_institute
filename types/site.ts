@@ -1,4 +1,4 @@
-// Site Configuration Types for EGP Aesthetics London
+// Site Configuration Types for Inspark Institute
 
 export interface Address {
   street: string;

@@ -51,7 +51,7 @@ export default function FooterMain() {
 
   // Get business data from admin profile
   const businessData = {
-    businessName: adminProfile?.company_name || "EGP",
+    businessName: adminProfile?.company_name || "Inspark Institute",
     businessEmail: adminProfile?.business_email || adminProfile?.email || process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "",
     businessPhone: adminProfile?.phone || process.env.NEXT_PUBLIC_PHONE_NUMBER || siteConfig.contact.phone,
     businessAddress: adminProfile?.company_address || "London, UK",
@@ -133,7 +133,7 @@ export default function FooterMain() {
               )}
             </Link>
             <p className="mt-4 text-sm text-gray-600 dark:text-gray-400 transition-colors duration-300 max-w-md">
-              Premier aesthetic treatments across South West London. Expert practitioners, 
+              Premier treatments across South West London. Expert practitioners, 
               proven results.
             </p>
             <div className="mt-4 space-y-2">

@@ -1,10 +1,30 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx tsc --noEmit 2>&1 | head -60)",
-      "Bash(npx tsc --noEmit 2>&1 | grep -E \"admin/auth/route\\\\.ts|admin-auth\\\\.ts|middleware\\\\.ts|customer/dashboard|admin/dashboard/page\" || echo \"No errors in changed files\")",
-      "Bash(ls /Users/ivanivanov/Documents/Projects/EGP/.env* 2>/dev/null)",
-      "Bash(node -e \"console.log\\(require\\('crypto'\\).randomBytes\\(48\\).toString\\('hex'\\)\\)\")"
+      "Bash(git remote *)",
+      "Bash(git fetch *)",
+      "Bash(git merge *)",
+      "Bash(brew install *)",
+      "Bash(pdftoppm -v)",
+      "Bash(pdftotext \"/Users/ivanivanov/Documents/Projects/inspark_institute/Inspark_Institute_Colour_Palette_Mood_Board v2.pdf\" -)",
+      "Bash(npm info *)",
+      "Bash(node /Users/ivanivanov/.claude/skills/heroui-migration/scripts/get_migration_guide.mjs full)",
+      "Bash(npx npm-check-updates *)",
+      "Bash(git checkout *)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(sed -i '' 's/New Aesthetics Header/Header/g' components/LayoutMain.tsx)",
+      "Bash(sed -i '' 's/Expert aesthetic consultation/Expert consultation/g' components/CardPricing.tsx)",
+      "Bash(sed -i '' 's/6 sections: EGP,/6 sections:/g; s/1\\\\. EGP \\(site/1\\\\. Brand \\(site/g' components/Footer.tsx)",
+      "Bash(sed -i '' 's/EGP AESTHETICS/INSPARK INSTITUTE/g' components/Header.tsx)",
+      "Bash(lsof -ti:3000)",
+      "Bash(xargs kill)",
+      "Bash(mkdir -p .claude)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(find /Users/ivanivanov -name \"*Beausite*\" -o -name \"*beausite*\" -o -name \"*BEAUSITE*\" 2>/dev/null | head -20)",
+      "Bash(cp \"/Users/ivanivanov/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/2894FE63-B216-49FD-98A6-B4763D7DA7EA/BeausiteGrandTrial-Bold.otf\" public/fonts/)",
+      "Bash(cp \"/Users/ivanivanov/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/81B257F1-C5E3-45FC-8C0C-5B38864F0CB7/BeausiteGrandTrial-Thin.otf\" public/fonts/)",
+      "Bash(node -e ' *)"
     ]
   }
 }

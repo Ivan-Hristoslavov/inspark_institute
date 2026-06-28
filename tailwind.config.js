@@ -11,36 +11,62 @@ const config = {
   theme: {
     extend: {
       colors: {
+        // === Main Logo Colours ===
+        'burgundy': {
+          DEFAULT: '#72262C',
+        },
+        'perch': {
+          DEFAULT: '#383E33',
+        },
+        // === Yellows ===
+        'pale-yellow': {
+          DEFAULT: '#FBE99F',
+        },
+        'pale-banana': {
+          DEFAULT: '#F2E2A0',
+        },
+        'bright-gold': {
+          DEFAULT: '#C99A3E',
+        },
+        'butter-yellow': {
+          DEFAULT: '#FBE99F',
+        },
+        'french-vanilla': {
+          DEFAULT: '#E6DCA8',
+        },
+        // === Reds ===
+        'spiced-apple': {
+          DEFAULT: '#793A38',
+        },
+        // === Douglas Fir Gradient ===
+        'fir': {
+          1: '#3E4A30',
+          2: '#2C3924',
+          3: '#1C2818',
+          4: '#10160D',
+          5: '#0A0C08',
+        },
+        // === Skin Tone Range ===
+        'skin': {
+          1: '#F0DCC8',
+          2: '#D9A877',
+          3: '#B07B54',
+          4: '#7C5235',
+          5: '#4A2F1E',
+        },
+        // === Legacy aliases ===
         'warm-beige': {
           DEFAULT: '#ddd5c3',
           light: '#f0ede7',
           lighter: '#f7f5f2',
           dark: '#c9c1b0',
         },
-        'egp-green': {
-          DEFAULT: '#464C45',
-          light: '#5a6259',
-          dark: '#3a4039',
-          darker: '#2d322c',
-        },
-        'egp-beige': {
-          DEFAULT: '#ddd5c3',
-          light: '#f0ede7',
-          lighter: '#f5f1e9',
-          dark: '#c9c1b0',
-          darker: '#b5ad9d',
-          darkest: '#9d9585',
-        },
       },
       fontFamily: {
-        sans: ["var(--font-montserrat)", "system-ui", "sans-serif"],
-        montserrat: ["var(--font-montserrat)", "sans-serif"],
+        sans: ["'BeausiteGrand'", "'Montserrat'", "system-ui", "sans-serif"],
+        heading: ["'BeausiteGrand'", "serif"],
+        body: ["'Montserrat'", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)"],
-      },
-      backgroundColor: {
-        'light-theme': '#ddd5c3',
-        'light-theme-light': '#f0ede7',
-        'light-theme-lighter': '#f7f5f2',
       },
     },
   },

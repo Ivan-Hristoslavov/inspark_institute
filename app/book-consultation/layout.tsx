@@ -3,7 +3,7 @@ import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: `Book Consultation | ${siteConfig.name}`,
-  description: "Book your consultation at EGP Aesthetics London. Expert aesthetic treatments with personalised care.",
+  description: "Book your consultation at Inspark Institute. Expert treatments with personalised care.",
   alternates: {
     canonical: `${siteConfig.url}/book-consultation`,
   },

@@ -112,12 +112,12 @@ export default async function ConditionPage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-egp-beige-lighter to-egp-beige-light dark:from-gray-800 dark:to-gray-900">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-warm-beige-lighter to-warm-beige-light dark:from-gray-800 dark:to-gray-900">
         <div className={layout.container}>
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex items-center justify-center gap-3 mb-6">
               {condition.popular && (
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-egp-green-bg-light dark:bg-egp-green-dark/30 rounded-full text-egp-green dark:text-egp-green-light text-xs font-semibold">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-perch-bg-light dark:bg-fir-1/30 rounded-full text-perch dark:text-perch text-xs font-semibold">
                   <Star className="w-3.5 h-3.5" />
                   <span>Common Condition</span>
                 </div>
@@ -135,14 +135,14 @@ export default async function ConditionPage({ params }: PageProps) {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                      href="/book/new"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-egp-beige-darkest via-egp-beige-darker to-egp-beige-dark text-white text-base font-semibold rounded-full hover:from-egp-beige-darker hover:via-egp-beige-dark hover:to-egp-beige transition-all shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-skin-4 via-warm-beige-dark to-warm-beige-dark text-white text-base font-semibold rounded-full hover:from-warm-beige-dark hover:via-warm-beige-dark hover:to-warm-beige transition-all shadow-lg hover:shadow-xl"
               >
                 <Calendar className="w-4 h-4" />
                 Book Treatment Now
               </Link>
               <Link
                 href={`tel:${siteConfig.contact.phone}`}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-egp-beige-darkest text-egp-beige-darkest dark:text-egp-beige-darker text-base font-semibold rounded-full hover:bg-egp-beige-darkest hover:text-white transition-all"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-skin-4 text-skin-4 dark:text-warm-beige-dark text-base font-semibold rounded-full hover:bg-skin-4 hover:text-white transition-all"
               >
                 <Phone className="w-4 h-4" />
                 Call Us
@@ -166,7 +166,7 @@ export default async function ConditionPage({ params }: PageProps) {
                   {condition.description}. Our expert practitioners have extensive experience treating this condition and can recommend the most effective treatment options for your specific needs.
                 </p>
                 <div className="flex items-center justify-center gap-3 mb-8">
-                  <Target className="w-4 h-4 text-egp-beige-darkest" />
+                  <Target className="w-4 h-4 text-skin-4" />
                   <div className="text-center">
                     <div className="font-semibold text-gray-900 dark:text-white">Treatment Focus</div>
                     <div className="text-sm text-gray-600 dark:text-gray-300">Personalised approach</div>
@@ -182,7 +182,7 @@ export default async function ConditionPage({ params }: PageProps) {
                 <ul className="space-y-4 max-w-md mx-auto">
                   {treatments.map((treatment: string, index: number) => (
                     <li key={index} className="flex items-center justify-center gap-3">
-                      <CheckCircle className="w-4 h-4 text-egp-green flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-perch flex-shrink-0" />
                       <span className="text-sm text-gray-600 dark:text-gray-300 text-center">{treatment}</span>
                     </li>
                   ))}
@@ -206,7 +206,7 @@ export default async function ConditionPage({ params }: PageProps) {
                   key={index}
                   className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all text-center"
                 >
-                  <div className="w-10 h-10 bg-gradient-to-br from-egp-beige-darkest via-egp-beige-darker to-egp-beige-dark rounded-full flex items-center justify-center mb-4 mx-auto">
+                  <div className="w-10 h-10 bg-gradient-to-br from-skin-4 via-warm-beige-dark to-warm-beige-dark rounded-full flex items-center justify-center mb-4 mx-auto">
                     <span className="text-white font-bold text-base">{step.step}</span>
                   </div>
                   <h3 className={`${typography.headingCard} ${textColors.heading} mb-3`}>
@@ -235,14 +235,14 @@ export default async function ConditionPage({ params }: PageProps) {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                      href="/book/new"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-egp-beige-darkest hover:bg-egp-beige-darker text-white text-base font-semibold rounded-full transition-all shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-skin-4 hover:bg-warm-beige-dark text-white text-base font-semibold rounded-full transition-all shadow-lg hover:shadow-xl"
               >
                 <Calendar className="w-4 h-4" />
                 Book Treatment Now
               </Link>
               <Link
                 href="/conditions"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-egp-beige-darkest text-egp-beige-darkest dark:text-egp-beige-darker text-base font-semibold rounded-full hover:bg-egp-beige-darkest hover:text-white transition-all"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-skin-4 text-skin-4 dark:text-warm-beige-dark text-base font-semibold rounded-full hover:bg-skin-4 hover:text-white transition-all"
               >
                 <ArrowRight className="w-4 h-4" />
                 View All Conditions

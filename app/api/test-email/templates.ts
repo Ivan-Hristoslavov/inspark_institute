@@ -31,14 +31,14 @@ export const SAMPLE = {
   remainingAmount: 149.62,
   bookingNumber: "BK-2026-0002",
   bookingId: "test-booking-id-123",
-  teamMember: "Eli (Senior Aesthetic Practitioner)",
+  teamMember: "Eli (Senior practitioner)",
   // Use fixed demo numbers so test email preview always shows full number (not env placeholders like +447XXXXXXXXXX)
   contactPhone: "07944 24 20 79",
-  contactEmail: "info@egpaesthetics.co.uk",
+  contactEmail: "info@insparkinstitute.co.uk",
   discountCode: "WELCOME10-ABC12",
   welcomeDiscountPercent: 10,
   discountValidDays: 30,
-  paymentLink: `${process.env.NEXT_PUBLIC_SITE_URL || "https://egpaesthetics.co.uk"}/payment/test`,
+  paymentLink: `${process.env.NEXT_PUBLIC_SITE_URL || "https://insparkinstitute.co.uk"}/payment/test`,
 } as const;
 
 export type TemplateId =
@@ -75,7 +75,7 @@ function getSimple(s: typeof SAMPLE): { subject: string; html: string; text: str
   const message = "This is a test email to verify SMTP configuration.";
   const L = EMAIL.light;
   return {
-    subject: "Test Email from EGP Aesthetics",
+    subject: "Test Email from Inspark Institute",
     text: `${message}\n\nThis email confirms that SMTP is configured correctly.`,
     html: `
 <!DOCTYPE html>
@@ -99,10 +99,10 @@ function getBookingConfirmation(s: typeof SAMPLE): { subject: string; html: stri
   return {
     subject: `Booking Confirmation - ${s.serviceNames} on ${s.dateShort}`,
     text: [
-      `Booking Confirmation - EGP Aesthetics`,
+      `Booking Confirmation - Inspark Institute`,
       ``,
       `Dear ${s.customerName},`,
-      `Thank you for booking with EGP Aesthetics!`,
+      `Thank you for booking with Inspark Institute!`,
       ``,
       `Booking Details:`,
       `- Service: ${s.serviceNames}`,
@@ -131,7 +131,7 @@ function getBookingConfirmation(s: typeof SAMPLE): { subject: string; html: stri
 </div>
 <div style="padding:32px 28px;font-size:15px;line-height:1.65;color:${L.text}">
 <p style="margin:0 0 16px;color:${L.text}">Dear ${s.customerName},</p>
-<p style="margin:0 0 24px;color:${L.textMuted}">Thank you for choosing EGP Aesthetics. Your booking has been received. To confirm your appointment, please complete payment below.</p>
+<p style="margin:0 0 24px;color:${L.textMuted}">Thank you for choosing Inspark Institute. Your booking has been received. To confirm your appointment, please complete payment below.</p>
 <div class="email-card" style="background:${L.cardBg};border:1px solid ${L.cardBorder};margin:24px 0;padding:20px;border-radius:8px">
 <div class="email-card-title" style="font-size:11px;letter-spacing:.12em;color:${L.green};margin-bottom:12px;font-weight:600">APPOINTMENT</div>
 <div style="padding:10px 0;border-bottom:1px solid #e7e4df;color:${L.text}">${s.serviceNames}</div>
@@ -157,10 +157,10 @@ function getBookingConfirmation(s: typeof SAMPLE): { subject: string; html: stri
 <div style="padding:8px 0;color:${L.text}"><a href="mailto:${s.contactEmail}" class="email-link" style="color:${L.link};text-decoration:none;font-weight:500">${s.contactEmail}</a></div>
 </div>
 <p style="margin-top:28px;color:${L.text}">We look forward to welcoming you.</p>
-<p style="color:${L.green};font-weight:600">EGP Aesthetics</p>
+<p style="color:${L.green};font-weight:600">Inspark Institute</p>
 </div>
 <div class="email-footer" style="padding:24px 28px;text-align:center;font-size:12px;color:${L.muted};border-top:1px solid #e7e4df;background:${L.wrap}">
-<p style="margin:0">Ref: ${s.bookingId} · EGP Aesthetics London</p>
+<p style="margin:0">Ref: ${s.bookingId} · Inspark Institute</p>
 </div>
 </div>
 </body>
@@ -183,7 +183,7 @@ function getPaymentConfirmed(s: typeof SAMPLE): { subject: string; html: string;
   return {
     subject: `Payment Confirmed - Booking for ${s.serviceNames}`,
     text: [
-      `Payment Confirmed - EGP Aesthetics`,
+      `Payment Confirmed - Inspark Institute`,
       ``,
       `Dear ${s.customerName},`,
       `Your payment has been successfully processed. Your booking is now confirmed!`,
@@ -240,10 +240,10 @@ function getPaymentConfirmed(s: typeof SAMPLE): { subject: string; html: string;
 <div style="padding:10px 0;color:${L.text}"><a href="mailto:${s.contactEmail}" class="email-link" style="color:${L.link};text-decoration:none;font-weight:500">${s.contactEmail}</a></div>
 </div>
 <p style="margin-top:28px;color:${L.text}">We look forward to seeing you.</p>
-<p style="color:${L.green};font-weight:600">EGP Aesthetics</p>
+<p style="color:${L.green};font-weight:600">Inspark Institute</p>
 </div>
 <div class="email-footer" style="padding:24px 28px;text-align:center;font-size:12px;color:${L.muted};border-top:1px solid #e7e4df;background:${L.wrap}">
-<p style="margin:0">Automated confirmation · EGP Aesthetics London</p>
+<p style="margin:0">Automated confirmation · Inspark Institute</p>
 </div>
 </div>
 </body>
@@ -259,7 +259,7 @@ function getAdminNewPaidBooking(s: typeof SAMPLE): { subject: string; html: stri
   return {
     subject: `New Paid Booking - ${s.customerName}`,
     text: [
-      `New Paid Booking - EGP Aesthetics`,
+      `New Paid Booking - Inspark Institute`,
       `Customer: ${s.customerName}`,
       `Email: ${s.customerEmail}`,
       `Phone: ${s.customerPhone}`,
@@ -343,7 +343,7 @@ function getAdminBookingRequest(s: typeof SAMPLE): { subject: string; html: stri
 </div>
 <p style="color:${L.muted};font-size:13px">Ref: ${s.bookingId} · ${new Date().toLocaleString("en-GB")}</p>
 </div>
-<div class="email-footer" style="padding:24px;text-align:center;font-size:12px;color:${L.muted};border-top:1px solid #e7e4df;background:${L.wrap}">Booking system · EGP Aesthetics</div>
+<div class="email-footer" style="padding:24px;text-align:center;font-size:12px;color:${L.muted};border-top:1px solid #e7e4df;background:${L.wrap}">Booking system · Inspark Institute</div>
 </div>
 </body>
 </html>`.trim(),
@@ -356,7 +356,7 @@ function getNewsletterWelcome(s: typeof SAMPLE): { subject: string; html: string
   return {
     subject: `Welcome! Your ${s.welcomeDiscountPercent}% Discount Code`,
     text: [
-      `Welcome to EGP Aesthetics!`,
+      `Welcome to Inspark Institute!`,
       ``,
       `Thank you for subscribing, ${firstName}.`,
       `Enjoy ${s.welcomeDiscountPercent}% off your first visit.`,
@@ -386,9 +386,9 @@ ${s.discountCode}
 <ul style="padding-left:20px;margin:12px 0 24px;color:${L.textMuted}">
 <li>Book online or call us</li><li>Mention this code when booking</li><li>Valid for ${s.discountValidDays} days</li>
 </ul>
-<p style="color:${L.green};font-weight:600">EGP Aesthetics</p>
+<p style="color:${L.green};font-weight:600">Inspark Institute</p>
 </div>
-<div class="email-footer" style="padding:28px 32px;text-align:center;font-size:12px;color:${L.muted};border-top:1px solid ${L.cardBorder};background:${L.wrap}">EGP Aesthetics London</div>
+<div class="email-footer" style="padding:28px 32px;text-align:center;font-size:12px;color:${L.muted};border-top:1px solid ${L.cardBorder};background:${L.wrap}">Inspark Institute</div>
 </div>
 </body>
 </html>`.trim(),

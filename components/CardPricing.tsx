@@ -14,7 +14,7 @@ type PricingTier = {
 const pricingTiers: PricingTier[] = [
   {
     name: "Consultation",
-    description: "Expert aesthetic consultation",
+    description: "Expert consultation",
     price: 85,
     features: [
       "Same day availability",
@@ -27,7 +27,7 @@ const pricingTiers: PricingTier[] = [
   },
   {
     name: "Standard Treatment",
-    description: "Professional aesthetic treatments",
+    description: "Professional treatments",
     price: 65,
     features: [
       "Next day appointment",
@@ -39,7 +39,7 @@ const pricingTiers: PricingTier[] = [
   },
   {
     name: "Treatment Package",
-    description: "Complete aesthetic treatment package",
+    description: "Complete treatment package",
     price: 2500,
     features: [
       "Multiple treatments included",
@@ -64,7 +64,7 @@ export function CardPricing() {
   };
 
   return (
-    <div className="py-12 bg-white dark:bg-egp-green-darker transition-colors duration-500">
+    <div className="py-12 bg-white dark:bg-fir-2 transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
@@ -79,7 +79,7 @@ export function CardPricing() {
           {pricingTiers.map((tier) => (
             <div
               key={tier.name}
-              className={`relative p-8 bg-white dark:bg-egp-green border border-gray-200 dark:border-egp-green-dark rounded-2xl shadow-sm flex flex-col transition-colors duration-300 ${
+              className={`relative p-8 bg-white dark:bg-perch border border-gray-200 dark:border-fir-1 rounded-2xl shadow-sm flex flex-col transition-colors duration-300 ${
                 tier.isPopular
                   ? "border-black ring-2 ring-black"
                   : "border-gray-200"

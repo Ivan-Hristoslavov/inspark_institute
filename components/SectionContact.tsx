@@ -42,7 +42,7 @@ export default function SectionContact() {
 
   // Get business data from admin profile and settings
   const businessData = {
-    businessName: adminProfile?.company_name || "EGP",
+    businessName: adminProfile?.company_name || "Inspark Institute",
     businessEmail: adminProfile?.business_email || "",
     businessPhone: adminProfile?.phone || "",
     businessAddress: adminProfile?.company_address || "London, UK",
@@ -183,14 +183,14 @@ export default function SectionContact() {
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed transition-colors duration-300 max-w-4xl mx-auto">
             Get in touch for immediate assistance or book your service online.
-            Professional aesthetic treatments with instant confirmation.
+            Professional treatments with instant confirmation.
           </p> */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">
             Book & Pay Immediately
           </h2>
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed transition-colors duration-300 max-w-4xl mx-auto">
-            Book your aesthetic treatment and pay securely online. 
-            Professional aesthetic treatments with instant confirmation.
+            Book your treatment and pay securely online. 
+            Professional treatments with instant confirmation.
           </p>
         </div>
 

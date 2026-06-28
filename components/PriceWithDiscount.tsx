@@ -61,7 +61,7 @@ export function PriceWithDiscount({
 
   const badgeEl = showBadge && discountPercentage != null && discountPercentage > 0 ? (
     <span
-      className={`font-semibold rounded-full ${sizes.badge} bg-egp-green text-white dark:bg-egp-beige dark:text-egp-green shadow-sm ring-1 ring-egp-green/20 dark:ring-egp-beige/20`}
+      className={`font-semibold rounded-full ${sizes.badge} bg-perch text-white dark:bg-warm-beige dark:text-perch shadow-sm ring-1 ring-perch/20 dark:ring-warm-beige/20`}
     >
       {discountPercentage}% off
     </span>

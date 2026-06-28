@@ -2,23 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Local Montserrat fonts */
+/* BeausiteGrandTrial — primary brand font */
 @font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
-  font-weight: 400;
+  font-family: 'BeausiteGrand';
+  src: url('/fonts/BeausiteGrandTrial-Thin.otf') format('opentype');
+  font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/Montserrat-Bold.ttf') format('truetype');
+  font-family: 'BeausiteGrand';
+  src: url('/fonts/BeausiteGrandTrial-Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
+/* Montserrat — secondary/body font */
 @font-face {
   font-family: 'Montserrat';
   src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('truetype-variations');
@@ -150,17 +151,17 @@ body {
   padding-bottom: env(safe-area-inset-bottom, 0);
 }
 
-/* Input (input-egp): remove blue focus ring, single green border on focus */
-.input-egp input:focus,
-.input-egp input:focus-visible {
+/* Input (input-inspark): remove blue focus ring, single green border on focus */
+.input-inspark input:focus,
+.input-inspark input:focus-visible {
   outline: none !important;
   box-shadow: none !important;
 }
-.input-egp [data-slot="input-wrapper"] {
+.input-inspark [data-slot="input-wrapper"] {
   box-shadow: none !important;
 }
-.input-egp [data-slot="input-wrapper"]:focus-within,
-.input-egp [data-slot="input-wrapper"][data-focus-within] {
+.input-inspark [data-slot="input-wrapper"]:focus-within,
+.input-inspark [data-slot="input-wrapper"][data-focus-within] {
   box-shadow: none !important;
   border-color: #464C45 !important;
   border-width: 2px !important;

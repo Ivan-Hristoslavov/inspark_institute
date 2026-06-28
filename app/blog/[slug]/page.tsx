@@ -67,7 +67,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const title = post.seo_title || `${post.title} | ${siteConfig.name}`;
   const description = toMetaDescription(
-    post.seo_description || post.excerpt || `Read about ${post.title} at EGP Aesthetics London.`
+    post.seo_description || post.excerpt || `Read about ${post.title} at Inspark Institute.`
   );
   const published = post.published_at ? new Date(post.published_at) : undefined;
   const modified = post.updated_at ? new Date(post.updated_at) : published;

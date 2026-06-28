@@ -133,11 +133,11 @@ export function TeamManager({ className = "" }: TeamManagerProps) {
   const [togglingActive, setTogglingActive] = useState<string | null>(null);
 
   const roles = [
-    "Aesthetic Practitioner",
-    "Senior Aesthetic Practitioner", 
+    "practitioner",
+    "Senior practitioner", 
     "Clinical Director",
     "Nurse Practitioner",
-    "Medical Aesthetician",
+    "Practitioner",
     "Consultant",
     "Therapist",
     "Support Staff"

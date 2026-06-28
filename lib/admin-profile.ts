@@ -68,7 +68,7 @@ export async function getAdminContactInfo(): Promise<AdminContactInfo> {
         profile?.business_email ||
         process.env.ADMIN_EMAIL ||
         process.env.NEXT_PUBLIC_BUSINESS_EMAIL ||
-        'info@egpaesthetics.co.uk',
+        'info@insparkinstitute.co.uk',
     };
   } catch (error) {
     console.warn('Error fetching admin contact info:', error);
@@ -77,7 +77,7 @@ export async function getAdminContactInfo(): Promise<AdminContactInfo> {
       email:
         process.env.ADMIN_EMAIL ||
         process.env.NEXT_PUBLIC_BUSINESS_EMAIL ||
-        'info@egpaesthetics.co.uk',
+        'info@insparkinstitute.co.uk',
     };
   }
 } 

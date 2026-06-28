@@ -41,7 +41,7 @@ export default function FindUsPage() {
   const displayContactInfo = contactInfo || {
     address: process.env.NEXT_PUBLIC_ADDRESS_FULL || "London, UK",
     phone: process.env.NEXT_PUBLIC_PHONE_NUMBER || "07944 24 20 79",
-    email: process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "info@egpaesthetics.co.uk",
+    email: process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "info@insparkinstitute.co.uk",
     whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || process.env.NEXT_PUBLIC_PHONE_NUMBER || "07944 24 20 79",
     googleMapsAddress: process.env.NEXT_PUBLIC_GOOGLE_MAPS_ADDRESS || process.env.NEXT_PUBLIC_ADDRESS_FULL || "London, UK"
   };
@@ -335,7 +335,7 @@ export default function FindUsPage() {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     className="w-full h-full"
-                    title={`EGP Aesthetics Location - ${displayContactInfo.googleMapsAddress || displayContactInfo.address}`}
+                    title={`Inspark Institute Location - ${displayContactInfo.googleMapsAddress || displayContactInfo.address}`}
                   />
                 </div>
                 <div className="mt-2 flex justify-center">

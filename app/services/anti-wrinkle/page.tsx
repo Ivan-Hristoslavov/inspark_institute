@@ -32,7 +32,7 @@ export default function AntiWrinklePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-egp-green-dark via-egp-green to-egp-green-light text-white py-16 md:py-24">
+      <section className="relative bg-gradient-to-br from-fir-1 via-perch to-perch text-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
@@ -47,14 +47,14 @@ export default function AntiWrinklePage() {
       </section>
 
       {/* Filters and Sort */}
-      <section className="py-8 bg-egp-beige-lighter">
+      <section className="py-8 bg-warm-beige-lighter">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {/* Quick Filters */}
             <div className="flex flex-wrap gap-3 items-center mb-4">
               <Chip
                 variant={showPopularOnly ? "solid" : "flat"}
-                className={showPopularOnly ? "bg-egp-green text-white" : ""}
+                className={showPopularOnly ? "bg-perch text-white" : ""}
                 onClick={() => setShowPopularOnly(!showPopularOnly)}
                 classNames={{
                   base: "cursor-pointer hover:opacity-80 transition-opacity",
@@ -95,7 +95,7 @@ export default function AntiWrinklePage() {
               <AccordionItem
                 key="filters"
                 title="Filters"
-                startContent={<Filter className="w-4 h-4 text-egp-green" />}
+                startContent={<Filter className="w-4 h-4 text-perch" />}
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <Select
@@ -134,7 +134,7 @@ export default function AntiWrinklePage() {
               <AccordionItem
                 key="sort"
                 title="Sort By"
-                startContent={<Clock className="w-4 h-4 text-egp-green" />}
+                startContent={<Clock className="w-4 h-4 text-perch" />}
               >
                 <Select
                   selectedKeys={[sortBy]}
@@ -223,16 +223,16 @@ export default function AntiWrinklePage() {
                     {filtered.map((service) => (
               <div
                 key={service.slug}
-                className="group relative bg-white border-2 border-gray-200 rounded-xl p-5 hover:border-egp-green hover:shadow-xl transition-all duration-300 flex flex-col"
+                className="group relative bg-white border-2 border-gray-200 rounded-xl p-5 hover:border-perch hover:shadow-xl transition-all duration-300 flex flex-col"
               >
                 {service.popular && (
-                  <span className="absolute top-3 right-3 px-2 py-0.5 bg-gradient-to-r from-egp-green to-egp-green-dark text-white text-[10px] font-bold rounded-full">
+                  <span className="absolute top-3 right-3 px-2 py-0.5 bg-gradient-to-r from-perch to-fir-1 text-white text-[10px] font-bold rounded-full">
                     POPULAR
                   </span>
                 )}
 
                 <Link href={`/services/${service.slug}`} className="flex-1">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 pr-16 group-hover:text-egp-green transition-colors">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 pr-16 group-hover:text-perch transition-colors">
                     {service.name}
                   </h3>
 
@@ -247,11 +247,11 @@ export default function AntiWrinklePage() {
                 <div className="flex items-center justify-between pt-3 border-t border-gray-200 mt-auto">
                   <div>
                     <span className="text-xs text-gray-600">From</span>
-                    <div className="text-lg font-bold text-egp-green">£{service.price}</div>
+                    <div className="text-lg font-bold text-perch">£{service.price}</div>
                   </div>
                   <Link
                     href="/book/new"
-                    className="flex items-center gap-2 text-egp-green font-semibold hover:text-egp-green-dark hover:gap-3 transition-all"
+                    className="flex items-center gap-2 text-perch font-semibold hover:text-fir-1 hover:gap-3 transition-all"
                   >
                     <span>Book</span>
                     <ArrowRight className="w-4 h-4" />
@@ -268,7 +268,7 @@ export default function AntiWrinklePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 sm:py-16 bg-gradient-to-br from-egp-green-dark via-egp-green to-egp-green-light text-white">
+      <section className="py-12 sm:py-16 bg-gradient-to-br from-fir-1 via-perch to-perch text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 px-4">
             Start Your Anti-Aging Journey Today

@@ -4,7 +4,7 @@ import GdprPageClient from "./gdpr-client";
 
 export async function generateMetadata(): Promise<Metadata> {
   const profile = await getAdminProfile();
-  const companyName = profile?.company_name || "EGP Aesthetics";
+  const companyName = profile?.company_name || "Inspark Institute";
   const canonical = `${process.env.NEXT_PUBLIC_SITE_URL || ""}/gdpr`;
 
   return {

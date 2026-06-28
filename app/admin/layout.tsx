@@ -250,7 +250,7 @@ export default function AdminLayout({
             </div>
             <div>
               <h1 className="text-xl font-bold text-white bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent font-playfair">
-                EGP Aesthetics
+                Inspark Institute
               </h1>
               <p className="text-xs text-white/80 font-medium">Admin Panel</p>
             </div>

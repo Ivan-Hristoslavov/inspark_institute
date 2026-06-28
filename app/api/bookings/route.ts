@@ -337,7 +337,7 @@ export async function POST(request: NextRequest) {
 // Function to send booking notification email to admin
 async function sendBookingNotificationEmail(booking: any) {
   try {
-    // Prefer ADMIN_EMAIL from env (e.g. info@egpaesthetics.co.uk), fallback to admin_profile
+    // Prefer ADMIN_EMAIL from env (e.g. info@insparkinstitute.co.uk), fallback to admin_profile
     let adminEmail = process.env.ADMIN_EMAIL;
     if (!adminEmail) {
       const { data: adminProfile } = await supabaseAdmin
@@ -445,7 +445,7 @@ ${booking.address ? `<div class="sect"><div class="sect-title">ADDRESS</div><div
 ${booking.notes ? `<div class="sect"><div class="sect-title">NOTES</div><div class="row">${booking.notes}</div></div>` : ''}
 <p style="color:#78716c;font-size:13px;">Ref: ${booking.id} · ${new Date(booking.created_at).toLocaleString("en-GB")}</p>
 </div>
-<div class="ft">Booking system · EGP Aesthetics</div>
+<div class="ft">Booking system · Inspark Institute</div>
 </div>
 </body>
 </html>
@@ -483,14 +483,14 @@ async function generateStripePaymentLink(booking: any) {
   try {
     // For now, we'll create a simple payment link
     // In a real implementation, you would integrate with Stripe API
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://egp.com';
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://insparkinstitute.com';
     const paymentLink = `${baseUrl}/payment/${booking.id}`;
     
     return paymentLink;
   } catch (error) {
     console.error("Error generating Stripe payment link:", error);
     // Return a fallback link
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://egp.com';
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://insparkinstitute.com';
     return `${baseUrl}/contact`;
   }
 }
@@ -503,11 +503,11 @@ function generateCustomerBookingConfirmationEmail(booking: any, paymentLink: str
     : "";
 
   return `
-Booking Confirmation - EGP Aesthetics
+Booking Confirmation - Inspark Institute
 
 Dear ${booking.customer_name},
 
-Thank you for booking with EGP Aesthetics! We're excited to provide you with our premium aesthetic treatments.
+Thank you for booking with Inspark Institute! We're excited to provide you with our premium treatments.
 
 Booking Details:
 - Service: ${booking.service}
@@ -538,7 +538,7 @@ Email: ${contactInfo.email}
 We look forward to seeing you!
 
 Best regards,
-EGP Aesthetics Team
+Inspark Institute Team
 
 Booking ID: ${booking.id}
   `.trim();
@@ -569,7 +569,7 @@ ${getEmailHead()}
 </div>
 <div style="padding:32px 28px;font-size:15px;line-height:1.65;color:${L.text}">
 <p style="margin:0 0 16px;color:${L.text}">Dear ${booking.customer_name},</p>
-<p style="margin:0 0 24px;color:${L.textMuted}">Thank you for choosing EGP Aesthetics. Your booking has been received. To confirm your appointment, please complete payment below.</p>
+<p style="margin:0 0 24px;color:${L.textMuted}">Thank you for choosing Inspark Institute. Your booking has been received. To confirm your appointment, please complete payment below.</p>
 
 <div class="email-card" style="background:${L.cardBg};border:1px solid ${L.cardBorder};margin:24px 0;padding:20px;border-radius:8px">
 <div class="email-card-title" style="font-size:11px;letter-spacing:.12em;color:${L.green};margin-bottom:12px;font-weight:600">APPOINTMENT</div>
@@ -603,10 +603,10 @@ ${isDeposit ? `<div style="background:#e8f5e9;border:1px solid ${L.accent};paddi
 </div>
 
 <p style="margin-top:28px;color:${L.text}">We look forward to welcoming you.</p>
-<p style="color:${L.green};font-weight:600">EGP Aesthetics</p>
+<p style="color:${L.green};font-weight:600">Inspark Institute</p>
 </div>
 <div class="email-footer" style="padding:24px 28px;text-align:center;font-size:12px;color:${L.muted};border-top:1px solid #e7e4df;background:${L.wrap}">
-<p style="margin:0">Ref: ${booking.id} · EGP Aesthetics London</p>
+<p style="margin:0">Ref: ${booking.id} · Inspark Institute</p>
 </div>
 </div>
 </body>

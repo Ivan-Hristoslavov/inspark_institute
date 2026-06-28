@@ -140,7 +140,7 @@ function ConditionsPageContent() {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="bg-egp-green dark:bg-egp-green-dark text-white flex flex-col gap-2">
+              <ModalHeader className="bg-perch dark:bg-fir-1 text-white flex flex-col gap-2">
                 <h2 className="text-xl sm:text-2xl font-bold">{condition.title}</h2>
               <div className="flex items-center gap-4 text-white/90">
                   <Chip 
@@ -155,7 +155,7 @@ function ConditionsPageContent() {
             {/* Description */}
             <div>
                   <h3 className="text-base font-bold text-foreground mb-3 flex items-center gap-2">
-                <Info className="w-4 h-4 text-egp-beige-darkest" />
+                <Info className="w-4 h-4 text-skin-4" />
                 Overview
               </h3>
                   <p className="text-sm text-default-600 leading-relaxed">
@@ -167,15 +167,15 @@ function ConditionsPageContent() {
             {condition.treatments && condition.treatments.length > 0 && (
               <div>
                     <h3 className="text-base font-bold text-foreground mb-4 flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-egp-green" />
+                      <CheckCircle className="w-4 h-4 text-perch" />
                   Available Treatments
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {condition.treatments.map((treatment, index) => (
-                        <Card key={index} className="bg-egp-green-bg-light dark:bg-egp-green-dark/20">
+                        <Card key={index} className="bg-perch-bg-light dark:bg-fir-1/20">
                           <CardBody className="p-3">
                             <div className="flex items-start gap-3">
-                              <CheckCircle className="w-4 h-4 text-egp-green flex-shrink-0 mt-0.5" />
+                              <CheckCircle className="w-4 h-4 text-perch flex-shrink-0 mt-0.5" />
                               <span className="text-sm text-default-700">{treatment}</span>
                     </div>
                           </CardBody>
@@ -198,7 +198,7 @@ function ConditionsPageContent() {
                     })()
                   }
                   onPress={onClose}
-                  className="bg-egp-green dark:bg-egp-green-dark text-white hover:opacity-90"
+                  className="bg-perch dark:bg-fir-1 text-white hover:opacity-90"
                   size="lg"
                 >
                 Book Treatment for This Condition
@@ -244,7 +244,7 @@ function ConditionsPageContent() {
 
         <div className="text-center mb-6 sm:mb-8">
           <p className={`${typography.lead} font-montserrat font-light max-w-2xl mx-auto text-sm sm:text-base`}>
-            Discover our comprehensive range of treatments for various aesthetic concerns and conditions
+            Discover our comprehensive range of treatments for various concerns and conditions
           </p>
         </div>
 
@@ -314,7 +314,7 @@ function ConditionsPageContent() {
               }}
               variant="light"
               size="sm"
-              className="text-egp-green dark:text-egp-green-light hover:text-egp-green-dark"
+              className="text-perch dark:text-perch hover:text-fir-1"
             >
               Clear all filters
             </Button>
@@ -335,7 +335,7 @@ function ConditionsPageContent() {
                 setSearchTerm('');
                 setCurrentPage(1);
               }}
-              className="bg-egp-green hover:bg-egp-green-dark text-white"
+              className="bg-perch hover:bg-fir-1 text-white"
               size="md"
             >
               Show All Conditions
@@ -349,12 +349,12 @@ function ConditionsPageContent() {
                 className="h-full"
                 shadow="sm"
               >
-                <CardHeader className="bg-egp-beige-lighter dark:bg-egp-green-dark px-2 sm:px-2.5 py-2 sm:py-2.5 border-b border-egp-beige-dark/60 dark:border-egp-green flex flex-col items-center text-center">
+                <CardHeader className="bg-warm-beige-lighter dark:bg-fir-1 px-2 sm:px-2.5 py-2 sm:py-2.5 border-b border-warm-beige-dark/60 dark:border-perch flex flex-col items-center text-center">
                   {/* Category Badge - Centered */}
                   <div className="flex justify-center mb-1.5">
                     <Chip
                       size="sm"
-                      className="bg-egp-green text-white text-[8px] h-5"
+                      className="bg-perch text-white text-[8px] h-5"
                       variant="flat"
                     >
                       {getCategoryDisplayName(condition.category)}
@@ -402,7 +402,7 @@ function ConditionsPageContent() {
                       onPress={() => setSelectedCondition(condition.slug)}
                       variant="bordered"
                       size="sm"
-                      className="flex-1 min-w-0 border-egp-green text-egp-green dark:text-white dark:border-egp-green text-xs h-8"
+                      className="flex-1 min-w-0 border-perch text-perch dark:text-white dark:border-perch text-xs h-8"
                       startContent={<Info className="w-2.5 h-2.5" />}
                     >
                       Details
@@ -417,7 +417,7 @@ function ConditionsPageContent() {
                     >
                       <Button
                         size="sm"
-                        className="flex-1 w-full min-w-0 bg-egp-green text-white text-xs h-8"
+                        className="flex-1 w-full min-w-0 bg-perch text-white text-xs h-8"
                         startContent={<Plus className="w-2.5 h-2.5" />}
                       >
                         Book
@@ -438,7 +438,7 @@ function ConditionsPageContent() {
               isDisabled={currentPage === 1}
               variant="bordered"
               size="sm"
-              className="border-gray-300 dark:border-gray-600 hover:border-egp-green hover:text-egp-green"
+              className="border-gray-300 dark:border-gray-600 hover:border-perch hover:text-perch"
             >
               Previous
             </Button>
@@ -450,8 +450,8 @@ function ConditionsPageContent() {
                 variant={currentPage === page ? "solid" : "bordered"}
                 className={
                   currentPage === page
-                    ? "bg-egp-green text-white"
-                    : "border-gray-300 dark:border-gray-600 hover:border-egp-green hover:text-egp-green"
+                    ? "bg-perch text-white"
+                    : "border-gray-300 dark:border-gray-600 hover:border-perch hover:text-perch"
                 }
               >
                 {page}
@@ -462,7 +462,7 @@ function ConditionsPageContent() {
               isDisabled={currentPage === totalPages}
               variant="bordered"
               size="sm"
-              className="border-gray-300 dark:border-gray-600 hover:border-egp-green hover:text-egp-green"
+              className="border-gray-300 dark:border-gray-600 hover:border-perch hover:text-perch"
             >
               Next
             </Button>
@@ -481,7 +481,7 @@ export default function ConditionsPage() {
     <Suspense fallback={
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-egp-green mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-perch mx-auto mb-4"></div>
           <p className="text-gray-600 dark:text-gray-400">Loading...</p>
         </div>
       </div>

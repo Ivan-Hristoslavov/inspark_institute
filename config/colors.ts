@@ -1,7 +1,6 @@
-// EGP Aesthetics London - Luxury Color Palette
-// Feminine, elegant, professional aesthetic clinic colors
+// Inspark Institute - Brand Color Palette
 
-export const aestheticsColors = {
+export const brandColors = {
   // Primary - Warm Beige Gradient (main brand tone)
   primary: {
     light: "#f5f1e9",      // Soft warm beige
@@ -162,42 +161,42 @@ export const aestheticsColors = {
 // Helper function to get category color
 export function getCategoryColor(category: string) {
   const categoryMap: Record<string, any> = {
-    face: aestheticsColors.categories.face,
-    "anti-wrinkle": aestheticsColors.categories.antiWrinkle,
-    fillers: aestheticsColors.categories.fillers,
-    body: aestheticsColors.categories.body,
+    face: brandColors.categories.face,
+    "anti-wrinkle": brandColors.categories.antiWrinkle,
+    fillers: brandColors.categories.fillers,
+    body: brandColors.categories.body,
   };
 
-  return categoryMap[category.toLowerCase()] || aestheticsColors.primary;
+  return categoryMap[category.toLowerCase()] || brandColors.primary;
 }
 
 // Export color classes for Tailwind
 export const colorClasses = {
   // Primary button (Green) - Solid color, no gradient
-  btnPrimary: `bg-egp-green hover:bg-egp-green-dark text-white`,
+  btnPrimary: `bg-perch hover:bg-fir-1 text-white`,
   
   // Secondary button (Beige) - Solid color, no gradient
-  btnSecondary: `bg-egp-beige hover:bg-egp-beige-dark text-gray-900`,
+  btnSecondary: `bg-warm-beige hover:bg-warm-beige-dark text-gray-900`,
   
   // Accent button (Beige) - Solid color, no gradient
-  btnAccent: `bg-egp-beige-darkest hover:bg-egp-beige-darker text-white`,
+  btnAccent: `bg-skin-4 hover:bg-warm-beige-dark text-white`,
   
   // Dark button (Dark green) - Solid color, no gradient
-  btnDark: `bg-egp-green-darker hover:bg-egp-green-dark text-white`,
+  btnDark: `bg-fir-2 hover:bg-fir-1 text-white`,
   
   // WhatsApp - Keep gradient for WhatsApp brand colors
-  btnWhatsApp: `bg-gradient-to-r ${aestheticsColors.buttons.whatsapp} hover:${aestheticsColors.buttons.whatsappHover} text-white`,
+  btnWhatsApp: `bg-gradient-to-r ${brandColors.buttons.whatsapp} hover:${brandColors.buttons.whatsappHover} text-white`,
 
   // Hero section
-  hero: `bg-gradient-to-br ${aestheticsColors.backgrounds.hero}`,
+  hero: `bg-gradient-to-br ${brandColors.backgrounds.hero}`,
   
   // Section backgrounds
-  section: `bg-gradient-to-b ${aestheticsColors.backgrounds.section}`,
-  sectionDark: `bg-gradient-to-b ${aestheticsColors.backgrounds.sectionDark} text-white`,
+  section: `bg-gradient-to-b ${brandColors.backgrounds.section}`,
+  sectionDark: `bg-gradient-to-b ${brandColors.backgrounds.sectionDark} text-white`,
   
   // Card backgrounds
-  card: `${aestheticsColors.backgrounds.card}`,
-  cardDark: `bg-gradient-to-br ${aestheticsColors.backgrounds.cardDark} text-white`,
+  card: `${brandColors.backgrounds.card}`,
+  cardDark: `bg-gradient-to-br ${brandColors.backgrounds.cardDark} text-white`,
 };
 
 // Typography System
@@ -221,9 +220,9 @@ export const typography = {
   onBeige: "text-gray-900",
   
   // Accent text
-  accent: `text-[${aestheticsColors.text.accent}]`,
-  green: `text-[${aestheticsColors.green.DEFAULT}]`,
-  beige: `text-[${aestheticsColors.text.beige}]`,
+  accent: `text-[${brandColors.text.accent}]`,
+  green: `text-[${brandColors.green.DEFAULT}]`,
+  beige: `text-[${brandColors.text.beige}]`,
 };
 
 // Form System

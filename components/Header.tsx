@@ -15,7 +15,7 @@ import type { Service } from "@/hooks/useServices";
 import { useAdminProfile, useAdminProfileContext } from "@/components/AdminProfileContext";
 import { useSocialLinks } from "@/hooks/useSocialLinks";
 
-export default function HeaderAesthetics() {
+export default function Header() {
   const { services } = useServices();
   const { conditions } = useConditions();
   const adminProfile = useAdminProfile();
@@ -596,7 +596,7 @@ export default function HeaderAesthetics() {
                   <ChevronDown
                     className={`relative z-10 w-2.5 h-2.5 transition-all duration-300 ${activeMenu === "treatments" ? "rotate-180 text-gray-900 dark:text-white" : "group-hover:text-gray-900 dark:group-hover:text-white"}`}
                   />
-                  <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-egp-green transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left z-10"></span>
+                  <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-perch transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left z-10"></span>
                   {/* Blurred white/black background */}
                   <span
                     className={`absolute inset-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-md transition-all duration-300 border border-white/20 dark:border-gray-700/20 ${
@@ -611,7 +611,7 @@ export default function HeaderAesthetics() {
                   ></span>
                   {/* Solid color overlay */}
                   <span
-                    className={`absolute inset-0 bg-egp-green/10 rounded-md transition-all duration-300 ${
+                    className={`absolute inset-0 bg-perch/10 rounded-md transition-all duration-300 ${
                       activeMenu === "treatments"
                         ? "opacity-100"
                         : "opacity-0 group-hover:opacity-100"
@@ -667,7 +667,7 @@ export default function HeaderAesthetics() {
                       : "text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl"
                   }`}
                 >
-                  EGP AESTHETICS
+                  INSPARK INSTITUTE
                 </h1>
                 <p
                   className={`font-montserrat text-gray-700 dark:text-gray-400 font-light tracking-[0.25em] sm:tracking-[0.3em] uppercase transition-all duration-300 group-hover:text-gray-900 dark:group-hover:text-white group-hover:tracking-[0.35em] sm:group-hover:tracking-[0.4em] ${
@@ -855,7 +855,7 @@ export default function HeaderAesthetics() {
                               <Link
                                 href={`/services?category=${encodeURIComponent(category.name)}`}
                                 onClick={() => setActiveMenu(null)}
-                                className="group relative text-xs font-medium text-gray-800 dark:text-gray-200 hover:text-egp-green dark:hover:text-egp-beige transition-all duration-300 whitespace-nowrap"
+                                className="group relative text-xs font-medium text-gray-800 dark:text-gray-200 hover:text-perch dark:hover:text-warm-beige transition-all duration-300 whitespace-nowrap"
                               >
                                 <span className="relative z-10">View All</span>
                                 <span className="relative z-10 ml-1 inline-block group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -878,13 +878,13 @@ export default function HeaderAesthetics() {
                                     className={`group relative flex px-2 py-1 -mx-2 rounded-md text-xs sm:text-sm text-gray-800 dark:text-gray-200 font-montserrat transition-all duration-300 hover:bg-white/30 dark:hover:bg-white/10 ${hasDiscount ? 'flex-col gap-1 py-1.5 pr-10' : 'items-center justify-between gap-2 min-w-0'}`}
                                   >
                                     {hasDiscount && item.discountPercentage != null && item.discountPercentage > 0 && (
-                                      <span className="absolute top-1.5 right-2 z-10 inline-flex flex-shrink-0 text-[10px] font-semibold bg-egp-green text-white dark:bg-egp-beige dark:text-egp-green px-1.5 py-0.5 rounded">
+                                      <span className="absolute top-1.5 right-2 z-10 inline-flex flex-shrink-0 text-[10px] font-semibold bg-perch text-white dark:bg-warm-beige dark:text-perch px-1.5 py-0.5 rounded">
                                         {item.discountPercentage}% off
                                       </span>
                                     )}
                                     <span className="relative z-0 flex-1 min-w-0 truncate group-hover:translate-x-1 text-gray-800 dark:text-gray-200 group-hover:text-gray-900 dark:group-hover:text-white transition-all duration-300">
                                       {item.name}
-                                      <span className="absolute left-0 -bottom-0.5 w-0 h-px bg-egp-green dark:bg-egp-beige group-hover:w-full transition-all duration-300 ease-out origin-left"></span>
+                                      <span className="absolute left-0 -bottom-0.5 w-0 h-px bg-perch dark:bg-warm-beige group-hover:w-full transition-all duration-300 ease-out origin-left"></span>
                                     </span>
                                     <span className={`relative z-0 flex-shrink-0 text-right min-w-0 ${hasDiscount ? 'w-full flex justify-end' : ''}`}>
                                       <PriceWithDiscount
@@ -920,7 +920,7 @@ export default function HeaderAesthetics() {
                           <Link
                             href="/conditions"
                             onClick={() => setActiveMenu(null)}
-                            className="group text-xs font-medium text-gray-800 dark:text-gray-200 hover:text-egp-green dark:hover:text-egp-beige transition-all duration-300"
+                            className="group text-xs font-medium text-gray-800 dark:text-gray-200 hover:text-perch dark:hover:text-warm-beige transition-all duration-300"
                           >
                             <span className="relative z-10">View All</span>
                             <span className="relative z-10 ml-1 inline-block group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -946,10 +946,10 @@ export default function HeaderAesthetics() {
                                       >
                                         <span className="relative z-10 group-hover:translate-x-1 text-gray-800 dark:text-gray-200 group-hover:text-gray-900 dark:group-hover:text-white transition-all duration-300 truncate min-w-0">
                                           {condition.title}
-                                          <span className="absolute left-0 -bottom-0.5 w-0 h-px bg-egp-green dark:bg-egp-beige group-hover:w-full transition-all duration-300 ease-out origin-left"></span>
+                                          <span className="absolute left-0 -bottom-0.5 w-0 h-px bg-perch dark:bg-warm-beige group-hover:w-full transition-all duration-300 ease-out origin-left"></span>
                                         </span>
                                         {priceInfo && (
-                                          <span className="relative z-10 text-[11px] sm:text-xs font-semibold text-egp-green dark:text-egp-beige flex-shrink-0">
+                                          <span className="relative z-10 text-[11px] sm:text-xs font-semibold text-perch dark:text-warm-beige flex-shrink-0">
                                             £{Number.isInteger(priceInfo.price) ? priceInfo.price : priceInfo.price.toFixed(2)}
                                           </span>
                                         )}
@@ -975,7 +975,7 @@ export default function HeaderAesthetics() {
                           <Link
                             href="/conditions?category=Body"
                             onClick={() => setActiveMenu(null)}
-                            className="group text-xs font-medium text-gray-800 dark:text-gray-200 hover:text-egp-green dark:hover:text-egp-beige transition-all duration-300"
+                            className="group text-xs font-medium text-gray-800 dark:text-gray-200 hover:text-perch dark:hover:text-warm-beige transition-all duration-300"
                           >
                             <span className="relative z-10">View All</span>
                             <span className="relative z-10 ml-1 inline-block group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -1001,10 +1001,10 @@ export default function HeaderAesthetics() {
                                       >
                                         <span className="relative z-10 group-hover:translate-x-1 text-gray-800 dark:text-gray-200 group-hover:text-gray-900 dark:group-hover:text-white transition-all duration-300 truncate min-w-0">
                                           {condition.title}
-                                          <span className="absolute left-0 -bottom-0.5 w-0 h-px bg-egp-green dark:bg-egp-beige group-hover:w-full transition-all duration-300 ease-out origin-left"></span>
+                                          <span className="absolute left-0 -bottom-0.5 w-0 h-px bg-perch dark:bg-warm-beige group-hover:w-full transition-all duration-300 ease-out origin-left"></span>
                                         </span>
                                         {priceInfo && (
-                                          <span className="relative z-10 text-xs font-semibold text-egp-green dark:text-egp-beige flex-shrink-0">
+                                          <span className="relative z-10 text-xs font-semibold text-perch dark:text-warm-beige flex-shrink-0">
                                             £{Number.isInteger(priceInfo.price) ? priceInfo.price : priceInfo.price.toFixed(2)}
                                           </span>
                                         )}
@@ -1029,7 +1029,7 @@ export default function HeaderAesthetics() {
                         <Link
                           href="/conditions"
                           onClick={() => setActiveMenu(null)}
-                          className="inline-flex items-center gap-2 text-sm font-semibold text-egp-green dark:text-egp-beige hover:underline"
+                          className="inline-flex items-center gap-2 text-sm font-semibold text-perch dark:text-warm-beige hover:underline"
                         >
                           View all conditions
                           <span className="inline-block group-hover:translate-x-1">→</span>
@@ -1152,7 +1152,7 @@ export default function HeaderAesthetics() {
                                       className={`group relative flex px-2 py-2 min-h-[40px] text-xs sm:text-sm text-gray-700 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white rounded-md transition-all duration-200 active:scale-95 touch-manipulation font-montserrat ${hasDiscount ? 'flex-col gap-1 items-stretch pr-10' : 'items-center justify-between gap-2 min-w-0'}`}
                                     >
                                       {hasDiscount && item.discountPercentage != null && item.discountPercentage > 0 && (
-                                        <span className="absolute top-2 right-2 z-10 inline-flex flex-shrink-0 text-[10px] font-semibold bg-egp-green text-white dark:bg-egp-beige dark:text-egp-green px-1.5 py-0.5 rounded">
+                                        <span className="absolute top-2 right-2 z-10 inline-flex flex-shrink-0 text-[10px] font-semibold bg-perch text-white dark:bg-warm-beige dark:text-perch px-1.5 py-0.5 rounded">
                                           {item.discountPercentage}% off
                                         </span>
                                       )}
@@ -1235,7 +1235,7 @@ export default function HeaderAesthetics() {
                                   >
                                     <span className="relative z-10 min-w-0 truncate">{condition.title}</span>
                                     {priceInfo && (
-                                      <span className="relative z-10 text-[11px] sm:text-xs font-semibold text-egp-green dark:text-egp-beige flex-shrink-0">
+                                      <span className="relative z-10 text-[11px] sm:text-xs font-semibold text-perch dark:text-warm-beige flex-shrink-0">
                                         £{Number.isInteger(priceInfo.price) ? priceInfo.price : priceInfo.price.toFixed(2)}
                                       </span>
                                     )}
@@ -1278,7 +1278,7 @@ export default function HeaderAesthetics() {
                                   >
                                     <span className="relative z-10 min-w-0 truncate">{condition.title}</span>
                                     {priceInfo && (
-                                      <span className="relative z-10 text-[11px] sm:text-xs font-semibold text-egp-green dark:text-egp-beige flex-shrink-0">
+                                      <span className="relative z-10 text-[11px] sm:text-xs font-semibold text-perch dark:text-warm-beige flex-shrink-0">
                                         £{Number.isInteger(priceInfo.price) ? priceInfo.price : priceInfo.price.toFixed(2)}
                                       </span>
                                     )}

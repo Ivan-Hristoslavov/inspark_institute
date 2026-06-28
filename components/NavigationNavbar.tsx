@@ -253,7 +253,7 @@ export default function NavigationNavbar() {
               <span className="relative block h-8 w-auto transition-all duration-300 group-hover:scale-110 group-hover:brightness-110 group-hover:drop-shadow-lg">
                 <Image
                   src="/logos/LOGO_LONG BLACK.png"
-                  alt="EGP Aesthetics"
+                  alt="Inspark Institute"
                   width={180}
                   height={32}
                   className="h-8 w-auto dark:hidden transition-all duration-300 group-hover:opacity-90 group-hover:drop-shadow-xl"
@@ -261,7 +261,7 @@ export default function NavigationNavbar() {
                 />
                 <Image
                   src="/logos/LOGO_LONG WHITE.png"
-                  alt="EGP Aesthetics"
+                  alt="Inspark Institute"
                   width={180}
                   height={32}
                   className="h-8 w-auto hidden dark:block transition-all duration-300 group-hover:opacity-90 group-hover:drop-shadow-xl"

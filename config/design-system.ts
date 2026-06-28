@@ -1,12 +1,12 @@
-// EGP Aesthetics Design System
+// Inspark Institute Design System
 // Centralized design tokens for consistent styling across the site
 // Beige + Green color palette
 
-import { aestheticsColors, colorClasses, typography, forms } from './colors';
+import { brandColors, colorClasses, typography, forms } from './colors';
 
 // Export all design system tokens
 export const designSystem = {
-  colors: aestheticsColors,
+  colors: brandColors,
   colorClasses,
   typography,
   forms,
@@ -56,7 +56,7 @@ export const formLayout = {
 
 // Input component - label outside, no blue ring, single green border on focus
 export const inputClassNames = {
-  base: "input-egp",
+  base: "input-inspark",
   label: "text-base font-medium",
   input: "text-base outline-none focus:outline-none focus-visible:outline-none",
   inputWrapper: [

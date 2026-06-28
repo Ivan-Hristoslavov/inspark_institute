@@ -50,7 +50,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const firstContent = sections[0]?.content;
   const description = firstContent
     ? (firstContent.slice(0, 160).trim() + (firstContent.length > 160 ? "…" : ""))
-    : "Learn about EGP Aesthetics London - our story, values, and commitment to exceptional aesthetic treatments.";
+    : "Learn about Inspark Institute - our story, values, and commitment to exceptional treatments.";
   return {
     title: `About Us | ${siteConfig.name}`,
     description,
@@ -109,7 +109,7 @@ export default async function AboutPage() {
               </div>
               <Link
                 href="/#services"
-                className="inline-block mt-8 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-egp-green dark:bg-egp-green-dark text-white hover:opacity-90 shadow-md hover:shadow-lg w-auto min-w-0"
+                className="inline-block mt-8 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-perch dark:bg-fir-1 text-white hover:opacity-90 shadow-md hover:shadow-lg w-auto min-w-0"
                 style={{ width: "fit-content" }}
               >
                 Our Services
@@ -122,7 +122,7 @@ export default async function AboutPage() {
             <div className="relative w-full max-h-[70vh] lg:max-h-[80vh] aspect-[3/4] lg:aspect-[4/5] rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-900 shadow-lg">
               <ImageWithSkeleton
                 src={heroSection.image_url}
-                alt={heroSection.heading || 'About EGP Aesthetics'}
+                alt={heroSection.heading || 'About Inspark Institute'}
                 fill
                 className="object-cover"
                 priority

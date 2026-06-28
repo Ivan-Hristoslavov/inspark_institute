@@ -22,7 +22,7 @@ export function ReviewsSection() {
 
   if (isLoading) {
     return (
-      <section className="py-8 sm:py-10 bg-egp-beige-lighter dark:bg-gray-900">
+      <section className="py-8 sm:py-10 bg-warm-beige-lighter dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center py-8">
             <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#b5ad9d]"></div>
@@ -35,7 +35,7 @@ export function ReviewsSection() {
 
   if (error) {
     return (
-      <section className="py-8 sm:py-10 bg-egp-beige-lighter dark:bg-gray-900">
+      <section className="py-8 sm:py-10 bg-warm-beige-lighter dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center py-8 text-red-600">{error}</div>
         </div>
@@ -50,7 +50,7 @@ export function ReviewsSection() {
   const currentReviews = reviews.slice(startIndex, endIndex);
 
   return (
-    <section className="py-6 sm:py-8 md:py-10 bg-egp-beige-lighter dark:bg-gray-900" id="reviews">
+    <section className="py-6 sm:py-8 md:py-10 bg-warm-beige-lighter dark:bg-gray-900" id="reviews">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header - compact */}
         <div className="text-center mb-4 sm:mb-6 md:mb-8">

@@ -407,7 +407,7 @@ ${adminDepositRows}
             ? `Paid (deposit): £${amountPaid.toFixed(2)}\nDue on arrival: £${remainingAmount.toFixed(2)}\n\n`
             : '';
           const adminText = `
-New Paid Booking - EGP Aesthetics
+New Paid Booking - Inspark Institute
 
 Customer: ${customerName}
 Email: ${finalCustomerEmail || 'Not provided'}
@@ -549,10 +549,10 @@ ${data.teamMember ? `<div style="padding:10px 0;color:${L.text}"><span style="co
 </div>
 
 <p style="margin-top:28px;color:${L.text}">We look forward to seeing you.</p>
-<p style="color:${L.green};font-weight:600">EGP Aesthetics</p>
+<p style="color:${L.green};font-weight:600">Inspark Institute</p>
 </div>
 <div class="email-footer" style="padding:24px 28px;text-align:center;font-size:12px;color:${L.muted};border-top:1px solid #e7e4df;background:${L.wrap}">
-<p style="margin:0">Automated confirmation · EGP Aesthetics London</p>
+<p style="margin:0">Automated confirmation · Inspark Institute</p>
 </div>
 </div>
 </body>
@@ -597,7 +597,7 @@ Payment Information:
 `;
 
   return `
-Payment Confirmed - EGP Aesthetics
+Payment Confirmed - Inspark Institute
 
 Dear ${data.customerName},
 
@@ -632,6 +632,6 @@ Email: ${data.contactEmail}
 We look forward to seeing you!
 
 Best regards,
-EGP Aesthetics Team
+Inspark Institute Team
   `.trim();
 }

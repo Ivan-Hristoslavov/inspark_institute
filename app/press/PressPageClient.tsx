@@ -195,7 +195,7 @@ export function PressPageClient({ awards, pressFeatures }: PressPageClientProps)
           
           <div className="text-center mb-6">
             <p className={`${typography.lead} font-montserrat font-light max-w-3xl mx-auto mb-4`}>
-              Recognition for our commitment to excellence in aesthetic medicine.
+              Recognition for our commitment to excellence in wellness.
             </p>
             
             {/* Filter Buttons - compact on mobile */}

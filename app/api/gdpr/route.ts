@@ -7,7 +7,7 @@ const defaultGdprContent = `# GDPR & Data Protection
 
 ## 1. Who we are
 
-EGP Aesthetics London ("we", "our", "us") is the data controller for the personal data we collect when you use our website, book treatments, or contact us.
+Inspark Institute ("we", "our", "us") is the data controller for the personal data we collect when you use our website, book treatments, or contact us.
 
 ## 2. What data we collect
 

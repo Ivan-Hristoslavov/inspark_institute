@@ -1,111 +1,39 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
-// Removed Inter - using our custom fonts
-import { SpeedInsights } from "@vercel/speed-insights/next";
-
-import { Providers } from "./providers";
-import { ToastProvider } from "@/components/Toast";
-import HashNavigation from "@/components/HashNavigation";
-import { AdminProfileProvider } from "@/components/AdminProfileContext";
-import { FirstVisitDiscountFormWrapper } from "@/components/FirstVisitDiscountFormWrapper";
-import CookieConsentModal from "@/components/CookieConsentModal";
-
-import LayoutMain from "@/components/LayoutMain";
-import { getAdminProfile } from "@/lib/admin-profile";
-import { createClient } from "@/lib/supabase/server";
 import { siteConfig } from "@/config/site";
-import { canonicalUrl, defaultOgImages, sameAsFromSiteConfig } from "@/lib/seo";
 
-// Using Montserrat font loaded via CSS @font-face
+const COMING_SOON = true;
 
-export async function generateMetadata(): Promise<Metadata> {
-  const profile = await getAdminProfile();
-  const companyName = profile?.company_name || siteConfig.name;
-  const description = siteConfig.seo.defaultDescription;
-  const ogImages = defaultOgImages(`${companyName} — London aesthetic clinic`);
-  const twitterHandle = process.env.NEXT_PUBLIC_TWITTER_HANDLE?.replace(/^@/, "") || "egpaesthetics";
-
-  return {
-    metadataBase: new URL(siteConfig.url),
-    title: {
-      default: siteConfig.seo.defaultTitle,
-      template: `%s | ${companyName}`
-    },
-    description,
-    keywords: siteConfig.seo.keywords,
-    authors: [{ name: companyName, url: siteConfig.url }],
-    creator: companyName,
-    publisher: companyName,
-    formatDetection: {
-      email: false,
-      address: false,
-      telephone: false,
-    },
-    icons: {
-      icon: [
-        { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
-      ],
-      shortcut: "/favicon.ico",
-    },
-    openGraph: {
-      ...siteConfig.seo.openGraph,
-      title: siteConfig.seo.defaultTitle,
-      description,
-      siteName: companyName,
-      url: siteConfig.url,
-      images: ogImages,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: siteConfig.seo.defaultTitle,
-      description,
-      images: [canonicalUrl("/opengraph-image")],
-      creator: twitterHandle ? `@${twitterHandle}` : undefined,
-      site: twitterHandle ? `@${twitterHandle}` : undefined,
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
-    },
-    verification: {
-      google: process.env.GOOGLE_SITE_VERIFICATION,
-      yandex: process.env.YANDEX_VERIFICATION,
-      yahoo: process.env.YAHOO_VERIFICATION,
-    },
-    other: {
-      "geo.region": "GB-LND",
-      "geo.placename": "London",
-      "geo.position": "51.4708;-0.1389",
-      "ICBM": "51.4708, -0.1389",
-      "DC.title": siteConfig.seo.defaultTitle,
-      "DC.description": description,
-      "DC.subject": "Aesthetic Clinic London, Aesthetic Treatments, Facial Aesthetics",
-      "DC.creator": companyName,
-      "DC.publisher": companyName,
-      "DC.contributor": companyName,
-      "DC.date": new Date().toISOString(),
-      "DC.type": "Service",
-      "DC.format": "text/html",
-      "DC.identifier": siteConfig.url,
-      "DC.language": "en",
-      "DC.coverage": "South West London",
-      "DC.rights": `Copyright © ${new Date().getFullYear()} EGP. All rights reserved.`,
-    },
-  };
-}
+export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.seo.defaultTitle,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.seo.defaultDescription,
+  keywords: siteConfig.seo.keywords,
+  icons: {
+    icon: [{ url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" }],
+    shortcut: "/favicon.ico",
+  },
+  openGraph: {
+    ...siteConfig.seo.openGraph,
+    title: siteConfig.seo.defaultTitle,
+    description: siteConfig.seo.defaultDescription,
+    siteName: siteConfig.name,
+    url: siteConfig.url,
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: "(prefers-color-scheme: light)", color: "#ddd5c3" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0c08" },
   ],
 };
 
@@ -114,157 +42,36 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Fetch admin profile data once at the layout level
-  const adminProfile = await getAdminProfile();
-  
-  // Fetch pricing cards and admin settings data for structured data (areas table not used)
-  const supabase = createClient();
-  const { data: pricingCards } = await supabase
-    .from('pricing_cards')
-    .select('*')
-    .eq('is_enabled', true)
-    .order('order', { ascending: true });
-    
-  const { data: adminSettings } = await supabase
-    .from('admin_settings')
-    .select('*');
-    
-  // Convert admin settings to object
-  const settingsMap: { [key: string]: any } = {};
-  adminSettings?.forEach((setting) => {
-    try {
-      settingsMap[setting.key] = JSON.parse(setting.value);
-    } catch {
-      settingsMap[setting.key] = setting.value;
-    }
-  });
-  
-  // Create structured data for the business
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "MedicalBusiness", "HealthAndBeautyBusiness"],
-    "@id": `${siteConfig.url}#business`,
-    "name": adminProfile?.company_name || "EGP",
-    "description": siteConfig.description,
-    "url": siteConfig.url,
-    "telephone": adminProfile?.phone || "123456789",
-    "email": adminProfile?.business_email || "",
-    "founder": {
-      "@type": "Person",
-      "name": adminProfile?.name || "Admin User"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": adminProfile?.company_address?.split(',')[0]?.trim() || "809 Wandsworth Road",
-      "addressLocality": settingsMap.businessCity || "London",
-      "addressRegion": "South West London",
-      "postalCode": settingsMap.businessPostcode || "SW8 3JH",
-      "addressCountry": "GB"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 51.4708,
-      "longitude": -0.1389
-    },
-    "areaServed": [],
-    "serviceType": pricingCards?.map(card => card.title) || [],
-    "openingHoursSpecification": settingsMap.workingDays?.map((day: string) => ({
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": day.charAt(0).toUpperCase() + day.slice(1),
-      "opens": settingsMap.workingHoursStart || "08:00",
-      "closes": settingsMap.workingHoursEnd || "18:00"
-    })) || [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "18:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification", 
-        "dayOfWeek": "Saturday",
-        "opens": "09:00",
-        "closes": "17:00"
-      }
-    ],
-    "priceRange": "££",
-    "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer"],
-    "currenciesAccepted": "GBP",
-    "vatNumber": settingsMap.vatNumber || "",
-    "registrationNumber": settingsMap.registrationNumber || "",
-    "mcsNumber": settingsMap.mcsNumber || "",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Aesthetic Treatments",
-      "itemListElement": pricingCards?.map(card => ({
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": card.title,
-          "description": card.subtitle || "Professional aesthetic treatment"
-        }
-      })) || []
-    },
-    "sameAs": sameAsFromSiteConfig()
-  };
+  if (COMING_SOON) {
+    return (
+      <html suppressHydrationWarning lang="en-GB">
+        <head>
+          <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+          <meta name="application-name" content="Inspark Institute" />
+        </head>
+        <body
+          className={clsx(
+            "min-h-screen font-sans antialiased"
+          )}
+          suppressHydrationWarning
+        >
+          {children}
+        </body>
+      </html>
+    );
+  }
 
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": `${siteConfig.url}#website`,
-    name: adminProfile?.company_name || siteConfig.name,
-    url: siteConfig.url,
-    description: siteConfig.description,
-    inLanguage: "en-GB",
-    publisher: { "@id": `${siteConfig.url}#business` },
-  };
+  // Full site layout — re-enable when launching
+  const { Providers } = await import("./providers");
+  const { default: LayoutMain } = await import("@/components/LayoutMain");
+  const { getAdminProfile } = await import("@/lib/admin-profile");
+  const adminProfile = await getAdminProfile();
 
   return (
     <html suppressHydrationWarning lang="en-GB">
       <head>
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="application-name" content="EGP" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="EGP" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="theme-color" content="#3b82f6" />
-        <meta name="msapplication-config" content="/browserconfig.xml" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema),
-          }}
-        />
-        
-        {/* Google tag (gtag.js) */}
-        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
-          <>
-            <script
-              async
-              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
-            />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
-                `,
-              }}
-            />
-          </>
-        )}
+        <meta name="application-name" content="Inspark Institute" />
       </head>
       <body
         className={clsx(
@@ -272,17 +79,9 @@ export default async function RootLayout({
         )}
         suppressHydrationWarning
       >
-        <ToastProvider>
-          <Providers initialAdminProfile={adminProfile}>
-            <HashNavigation />
-            <LayoutMain adminProfile={adminProfile}>{children}</LayoutMain>
-            {/* First-visit discount popup (client) */}
-            <FirstVisitDiscountFormWrapper />
-            {/* GDPR & Cookies Consent Modal */}
-            <CookieConsentModal />
-          </Providers>
-        </ToastProvider>
-        <SpeedInsights />
+        <Providers initialAdminProfile={adminProfile}>
+          <LayoutMain adminProfile={adminProfile}>{children}</LayoutMain>
+        </Providers>
       </body>
     </html>
   );

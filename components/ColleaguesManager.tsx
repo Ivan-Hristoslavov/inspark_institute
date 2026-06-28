@@ -41,11 +41,11 @@ export function ColleaguesManager({ className = "" }: ColleaguesManagerProps) {
   const { showSuccess, showError } = useToast();
 
   const roles = [
-    "Aesthetic Practitioner",
-    "Senior Aesthetic Practitioner", 
+    "practitioner",
+    "Senior practitioner", 
     "Clinical Director",
     "Nurse Practitioner",
-    "Medical Aesthetician",
+    "Practitioner",
     "Consultant",
     "Therapist",
     "Support Staff"

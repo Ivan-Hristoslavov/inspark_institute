@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation';
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: `Awards & Press | ${siteConfig.name}`,
-    description: "Discover our awards, press features, and media recognition at EGP Aesthetics London.",
+    description: "Discover our awards, press features, and media recognition at Inspark Institute.",
     alternates: {
       canonical: `${siteConfig.url}/press`,
     },

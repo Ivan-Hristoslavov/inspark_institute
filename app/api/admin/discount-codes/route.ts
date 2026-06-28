@@ -168,18 +168,18 @@ ${discountCode}
 </ul>
 
 <p>We look forward to seeing you!</p>
-<p style="font-family:Georgia,serif"><strong>EGP Aesthetics</strong></p>
+<p style="font-family:Georgia,serif"><strong>Inspark Institute</strong></p>
 </div>
-<div class="ft">EGP Aesthetics London</div>
+<div class="ft">Inspark Institute</div>
 </div>
 </body>
 </html>`;
 
-        const emailText = `Hello ${firstName},\n\nWe have a special ${percentage}% discount waiting for you!\n\nYour Discount Code: ${discountCode}\n\nHow to use:\n- Book online or call us\n- Mention this code when booking\n- Valid for ${days} days\n\nWe look forward to seeing you!\n\nEGP Aesthetics`;
+        const emailText = `Hello ${firstName},\n\nWe have a special ${percentage}% discount waiting for you!\n\nYour Discount Code: ${discountCode}\n\nHow to use:\n- Book online or call us\n- Mention this code when booking\n- Valid for ${days} days\n\nWe look forward to seeing you!\n\nInspark Institute`;
 
         await sendEmail({
           to: customer.email,
-          subject: `Your ${percentage}% Discount Code from EGP Aesthetics`,
+          subject: `Your ${percentage}% Discount Code from Inspark Institute`,
           text: emailText,
           html: emailHtml,
         });

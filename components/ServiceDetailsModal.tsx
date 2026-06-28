@@ -139,7 +139,7 @@ export function ServiceDetailsModal({
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {(s.downtime_days ?? 0) > 0 && (
                   <div className="bg-[#f5f1e9] dark:bg-gray-800/60 border border-[#e4d9c8] dark:border-gray-700 rounded-lg p-4">
-                    <div className="flex items-center gap-2 text-[#6b5f4b] dark:text-egp-beige font-semibold text-sm mb-1">
+                    <div className="flex items-center gap-2 text-[#6b5f4b] dark:text-warm-beige font-semibold text-sm mb-1">
                       <Shield className="w-4 h-4" />
                       Downtime
                     </div>
@@ -150,8 +150,8 @@ export function ServiceDetailsModal({
                 )}
                 {(s.results_duration_weeks ?? 0) > 0 && (
                   <div className="bg-[#f5f1e9] dark:bg-gray-800/60 border border-[#e4d9c8] dark:border-gray-700 rounded-lg p-4">
-                    <div className="flex items-center gap-2 text-[#6b5f4b] dark:text-egp-beige font-semibold text-sm mb-1">
-                      <svg className="w-4 h-4 text-egp-green dark:text-egp-beige" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex items-center gap-2 text-[#6b5f4b] dark:text-warm-beige font-semibold text-sm mb-1">
+                      <svg className="w-4 h-4 text-perch dark:text-warm-beige" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                       </svg>
                       Results Duration
@@ -178,7 +178,7 @@ export function ServiceDetailsModal({
               {s.description && (
                 <div>
                   <h3 className={`${typography.headingSmall} ${textColors.heading} mb-2 flex items-center gap-2`}>
-                    <Info className="w-5 h-5 text-egp-green dark:text-egp-beige" />
+                    <Info className="w-5 h-5 text-perch dark:text-warm-beige" />
                     Overview
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -218,8 +218,8 @@ export function ServiceDetailsModal({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {s.preparation && (
                   <div className="bg-[#f5f1e9] dark:bg-gray-800/40 border border-[#e4d9c8] dark:border-gray-700 rounded-lg p-4">
-                    <h4 className="text-sm font-semibold text-[#6b5f4b] dark:text-egp-beige mb-2 flex items-center gap-2">
-                      <Shield className="w-4 h-4 text-egp-green dark:text-egp-beige" />
+                    <h4 className="text-sm font-semibold text-[#6b5f4b] dark:text-warm-beige mb-2 flex items-center gap-2">
+                      <Shield className="w-4 h-4 text-perch dark:text-warm-beige" />
                       Preparation tips
                     </h4>
                     <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -229,8 +229,8 @@ export function ServiceDetailsModal({
                 )}
                 {s.aftercare && (
                   <div className="bg-[#f5f1e9] dark:bg-gray-800/40 border border-[#e4d9c8] dark:border-gray-700 rounded-lg p-4">
-                    <h4 className="text-sm font-semibold text-[#6b5f4b] dark:text-egp-beige mb-2 flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-egp-green dark:text-egp-beige" />
+                    <h4 className="text-sm font-semibold text-[#6b5f4b] dark:text-warm-beige mb-2 flex items-center gap-2">
+                      <Calendar className="w-4 h-4 text-perch dark:text-warm-beige" />
                       Aftercare guidance
                     </h4>
                     <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">

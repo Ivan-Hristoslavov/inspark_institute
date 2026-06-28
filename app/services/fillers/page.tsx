@@ -46,21 +46,21 @@ export default function FillersPage() {
             {fillerServices.map((service) => (
               <div
                 key={service.slug}
-                className="group relative bg-white border-2 border-gray-200 rounded-xl p-5 hover:border-egp-green hover:shadow-xl transition-all duration-300 flex flex-col"
+                className="group relative bg-white border-2 border-gray-200 rounded-xl p-5 hover:border-perch hover:shadow-xl transition-all duration-300 flex flex-col"
               >
                 {service.featured && (
-                  <span className="absolute top-3 right-3 px-2 py-0.5 bg-gradient-to-r from-egp-green to-egp-green-dark text-white text-[10px] font-bold rounded-full">
+                  <span className="absolute top-3 right-3 px-2 py-0.5 bg-gradient-to-r from-perch to-fir-1 text-white text-[10px] font-bold rounded-full">
                     FEATURED
                   </span>
                 )}
                 {service.popular && (
-                  <span className="absolute top-3 right-3 px-2 py-0.5 bg-gradient-to-r from-egp-green to-egp-green-dark text-white text-[10px] font-bold rounded-full">
+                  <span className="absolute top-3 right-3 px-2 py-0.5 bg-gradient-to-r from-perch to-fir-1 text-white text-[10px] font-bold rounded-full">
                     POPULAR
                   </span>
                 )}
 
                 <Link href={`/services/${service.slug}`} className="flex-1">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 pr-16 group-hover:text-egp-green transition-colors">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 pr-16 group-hover:text-perch transition-colors">
                     {service.name}
                   </h3>
 
@@ -75,11 +75,11 @@ export default function FillersPage() {
                 <div className="flex items-center justify-between pt-3 border-t border-gray-200 mt-auto">
                   <div>
                     <span className="text-xs text-gray-600">From</span>
-                    <div className="text-lg font-bold text-egp-green">£{service.price}</div>
+                    <div className="text-lg font-bold text-perch">£{service.price}</div>
                   </div>
                   <Link
                     href="/book/new"
-                    className="flex items-center gap-2 text-egp-green font-semibold hover:text-egp-green-dark hover:gap-3 transition-all"
+                    className="flex items-center gap-2 text-perch font-semibold hover:text-fir-1 hover:gap-3 transition-all"
                   >
                     <span>Book</span>
                     <ArrowRight className="w-4 h-4" />

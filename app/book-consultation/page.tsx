@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site";
 import Link from "next/link";
 import { Calendar, Clock, Star, CheckCircle, ArrowRight } from "lucide-react";
 import { Card, CardBody, CardHeader, Button, Chip } from "@heroui/react";
-import { aestheticsColors } from "@/config/colors";
+import { brandColors } from "@/config/colors";
 import ButtonPrimary from "@/components/ButtonPrimary";
 
 export default function BookConsultationPage() {
@@ -85,23 +85,23 @@ export default function BookConsultationPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-egp-green-darker">
+    <div className="min-h-screen bg-white dark:bg-fir-2">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-egp-beige-lighter to-egp-beige-light dark:from-egp-green-dark dark:to-egp-green-darker">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-warm-beige-lighter to-warm-beige-light dark:from-fir-1 dark:to-fir-2">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
               Book Your Consultation
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8">
-              Start your aesthetic journey with a personalised consultation
+              Start your journey with a personalised consultation
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 as={Link}
                 href="/book"
                 size="lg"
-                className="bg-gradient-to-r from-egp-green via-egp-green-light to-egp-green text-white"
+                className="bg-gradient-to-r from-perch via-perch to-perch text-white"
                 startContent={<Calendar className="w-5 h-5" />}
               >
                 Book Now
@@ -111,7 +111,7 @@ export default function BookConsultationPage() {
                 href={`tel:${siteConfig.contact.phone}`}
                 variant="bordered"
                 size="lg"
-                className="border-egp-green text-egp-green dark:text-white dark:border-egp-green"
+                className="border-perch text-perch dark:text-white dark:border-perch"
                 startContent={<Clock className="w-5 h-5" />}
               >
                 Call Now
@@ -132,13 +132,13 @@ export default function BookConsultationPage() {
               {consultationTypes.map((consultation, index) => (
                 <Card
                   key={index}
-                  className={`relative ${consultation.popular ? 'ring-2 ring-egp-green' : ''}`}
+                  className={`relative ${consultation.popular ? 'ring-2 ring-perch' : ''}`}
                   shadow="lg"
                 >
                   {consultation.popular && (
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
                       <Chip
-                        className="bg-egp-green text-white"
+                        className="bg-perch text-white"
                         size="sm"
                       >
                         Most Popular
@@ -150,7 +150,7 @@ export default function BookConsultationPage() {
                       <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
                         {consultation.title}
                       </h3>
-                      <div className="text-xl sm:text-2xl md:text-3xl font-bold text-egp-green dark:text-white">
+                      <div className="text-xl sm:text-2xl md:text-3xl font-bold text-perch dark:text-white">
                         {consultation.price}
                       </div>
                     </div>
@@ -174,8 +174,8 @@ export default function BookConsultationPage() {
                       href="/book"
                       className={`w-full ${
                         consultation.popular
-                          ? 'bg-gradient-to-r from-egp-green via-egp-green-light to-egp-green text-white'
-                          : 'bg-egp-beige-light dark:bg-egp-green-dark text-gray-900 dark:text-white'
+                          ? 'bg-gradient-to-r from-perch via-perch to-perch text-white'
+                          : 'bg-warm-beige-light dark:bg-fir-1 text-gray-900 dark:text-white'
                       }`}
                       size="lg"
                     >
@@ -190,7 +190,7 @@ export default function BookConsultationPage() {
       </section>
 
       {/* Treatment Categories */}
-      <section className="py-16 md:py-24 bg-egp-beige-lighter dark:bg-egp-green-dark">
+      <section className="py-16 md:py-24 bg-warm-beige-lighter dark:bg-fir-1">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white text-center mb-12">
@@ -245,12 +245,12 @@ export default function BookConsultationPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-12">
-              Why Choose EGP Aesthetics?
+              Why Choose Inspark Institute?
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <Card shadow="sm" className="bg-white dark:bg-egp-green-dark">
+              <Card shadow="sm" className="bg-white dark:bg-fir-1">
                 <CardBody className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-egp-beige-darkest to-egp-beige-dark rounded-full flex items-center justify-center mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-skin-4 to-warm-beige-dark rounded-full flex items-center justify-center mb-4">
                     <Star className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">
@@ -261,9 +261,9 @@ export default function BookConsultationPage() {
                   </p>
                 </CardBody>
               </Card>
-              <Card shadow="sm" className="bg-white dark:bg-egp-green-dark">
+              <Card shadow="sm" className="bg-white dark:bg-fir-1">
                 <CardBody className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-egp-green to-egp-green-light rounded-full flex items-center justify-center mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-perch to-perch rounded-full flex items-center justify-center mb-4">
                     <CheckCircle className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">
@@ -274,9 +274,9 @@ export default function BookConsultationPage() {
                   </p>
                 </CardBody>
               </Card>
-              <Card shadow="sm" className="bg-white dark:bg-egp-green-dark">
+              <Card shadow="sm" className="bg-white dark:bg-fir-1">
                 <CardBody className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-egp-green-dark to-egp-green rounded-full flex items-center justify-center mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-fir-1 to-perch rounded-full flex items-center justify-center mb-4">
                     <Calendar className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">

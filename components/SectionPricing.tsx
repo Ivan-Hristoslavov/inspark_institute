@@ -104,7 +104,7 @@ export function SectionPricing() {
               Transparent Pricing
             </div>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              EGP - Professional Rates
+              Inspark Institute - Professional Rates
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Clear, competitive pricing with no hidden fees. Choose the service
@@ -164,7 +164,7 @@ export function SectionPricing() {
             Transparent Pricing
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            EGP - Professional Rates
+            Inspark Institute - Professional Rates
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Clear, competitive pricing with no hidden fees. Choose the service
@@ -175,7 +175,7 @@ export function SectionPricing() {
         {/* Dynamic Pricing Cards - Fixed Height Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center max-w-6xl mx-auto mb-16">
           {pricingCards.map((card, index) => (
-            <div key={card.id} className="group relative bg-white dark:bg-egp-green rounded-3xl shadow-xl border-2 border-gray-300 dark:border-egp-green-dark p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden flex flex-col h-full">
+            <div key={card.id} className="group relative bg-white dark:bg-perch rounded-3xl shadow-xl border-2 border-gray-300 dark:border-fir-1 p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden flex flex-col h-full">
               {/* Background Pattern */}
               <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${index % 2 === 0 ? 'from-blue-100 to-purple-100' : 'from-orange-100 to-red-100 dark:from-orange-900/30 dark:to-red-900/30'} rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500`} />
               <div className={`absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr ${index % 2 === 0 ? 'from-yellow-100 to-orange-100' : 'from-green-100 to-blue-100 dark:from-green-900/30 dark:to-blue-900/30'} rounded-full translate-y-12 -translate-x-12 group-hover:scale-125 transition-transform duration-500`} />

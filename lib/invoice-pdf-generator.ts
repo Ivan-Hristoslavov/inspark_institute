@@ -25,11 +25,11 @@ export function generateInvoicePDF(invoice: Invoice, vatSettings?: { is_enabled:
   doc.setTextColor(255, 255, 255);
   doc.setFont("helvetica", "bold");
   doc.setFontSize(26);
-  doc.text(invoice.company_name || "EGP", spacing.margin, 45);
+  doc.text(invoice.company_name || "Inspark Institute", spacing.margin, 45);
 
   doc.setFontSize(11);
   doc.setFont("helvetica", "normal");
-  doc.text("Professional Aesthetic Treatments", spacing.margin, 68);
+  doc.text("Professional treatments", spacing.margin, 68);
 
   y = 100;
 
@@ -81,7 +81,7 @@ export function generateInvoicePDF(invoice: Invoice, vatSettings?: { is_enabled:
   y += spacing.lineHeight + 6;
   doc.setTextColor(37, 99, 235);
   doc.setFontSize(13);
-  doc.text(invoice.company_name || "EGP", spacing.margin, y);
+  doc.text(invoice.company_name || "Inspark Institute", spacing.margin, y);
 
   y += spacing.lineHeight;
   doc.setFont("helvetica", "normal");
@@ -187,7 +187,7 @@ export function generateInvoicePDF(invoice: Invoice, vatSettings?: { is_enabled:
   y += 30;
   
   // Handle multiple service items if manual_description contains multiple lines
-  const serviceText = invoice.booking?.service || invoice.manual_description || "Professional Aesthetic Treatment";
+  const serviceText = invoice.booking?.service || invoice.manual_description || "Professional treatment";
   const serviceLines = serviceText.split('\n').filter(line => line.trim());
   
   // Debug: Log the service information
@@ -326,7 +326,7 @@ export function generateInvoicePDF(invoice: Invoice, vatSettings?: { is_enabled:
   doc.setFontSize(7);
   doc.setTextColor(107, 114, 128);
 
-  let footerText = `${invoice.company_name || "EGP"} • ${invoice.company_address || "London, UK"}`;
+  let footerText = `${invoice.company_name || "Inspark Institute"} • ${invoice.company_address || "London, UK"}`;
   if (invoice.company_vat_number) {
     footerText += ` • VAT: ${invoice.company_vat_number}`;
   }

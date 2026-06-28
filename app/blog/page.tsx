@@ -69,7 +69,7 @@ export default function BlogPage() {
         </div>
 
         <p className={`${typography.lead} font-montserrat font-light max-w-2xl mx-auto text-center text-xs sm:text-sm mb-4 sm:mb-8`}>
-          Stay informed about the latest in aesthetic treatments, skincare tips, and beauty insights.
+          Stay informed about the latest in treatments, skincare tips, and beauty insights.
         </p>
 
         {posts.length === 0 ? (

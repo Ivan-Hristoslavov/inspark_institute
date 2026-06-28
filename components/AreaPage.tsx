@@ -41,7 +41,7 @@ export function AreaPage({ areaName, postcode, description, localKeywords, nearb
               </div>
 
               <h1 className={`${typography.headingHero} mb-6 text-white`}>
-                Premium Aesthetics in <span className="text-yellow-300">{areaName}</span>
+                Premium Services in <span className="text-yellow-300">{areaName}</span>
               </h1>
 
               <p className="text-xl text-blue-100 mb-8 leading-relaxed">
@@ -112,10 +112,10 @@ export function AreaPage({ areaName, postcode, description, localKeywords, nearb
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className={`${typography.headingSection} text-gray-900 mb-4`}>
-              Aesthetic Treatments in {areaName}
+              treatments in {areaName}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Professional aesthetic treatments for {areaName} residents
+              Professional treatments for {areaName} residents
             </p>
           </div>
 
@@ -137,7 +137,7 @@ export function AreaPage({ areaName, postcode, description, localKeywords, nearb
                   </svg>
                 ),
                 title: `Expert Treatments ${areaName}`,
-                description: "Professional aesthetic treatments with expert practitioners serving {areaName}."
+                description: "Professional treatments with expert practitioners serving {areaName}."
               },
               {
                 icon: (
@@ -146,7 +146,7 @@ export function AreaPage({ areaName, postcode, description, localKeywords, nearb
                   </svg>
                 ),
                 title: `Face Treatments ${areaName}`,
-                description: "Comprehensive facial aesthetic treatments including anti-wrinkle injections, fillers, and skin rejuvenation."
+                description: "Comprehensive facial treatments including anti-wrinkle injections, fillers, and skin rejuvenation."
               },
               {
                 icon: (
@@ -197,7 +197,7 @@ export function AreaPage({ areaName, postcode, description, localKeywords, nearb
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className={`${typography.headingSection} text-gray-900 mb-4`}>
-              Why Choose EGP in {areaName}?
+              Why Choose Inspark Institute in {areaName}?
             </h2>
             <p className="text-xl text-gray-600">
               Local expertise you can trust

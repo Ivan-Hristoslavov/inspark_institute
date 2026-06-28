@@ -26,7 +26,7 @@ type WorkingHoursData = {
   };
 };
 
-export default function FooterAesthetics() {
+export default function Footer() {
   const currentYear = new Date().getFullYear();
   const [workingHours, setWorkingHours] = useState<WorkingHoursData | null>(null);
   const [loadingHours, setLoadingHours] = useState(true);
@@ -210,10 +210,10 @@ export default function FooterAesthetics() {
   return (
     <footer className="relative bg-[#ddd5c3] dark:bg-gray-900 text-gray-900 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700">
       <div className="relative">
-        {/* Main Footer Content - 6 sections: EGP, Contact Us, Opening Hours, Quick Links, Follow Us, Legal */}
+        {/* Main Footer Content - 6 sections: Contact Us, Opening Hours, Quick Links, Follow Us, Legal */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6">
-            {/* 1. EGP (site name, tagline, description from config) - first in order */}
+            {/* 1. Brand (site name, tagline, description from config) - first in order */}
             <div className="space-y-3 order-1 pb-6 border-b border-gray-300 dark:border-gray-600 sm:border-b-0 sm:pb-0">
               <h2 className="text-base font-bold text-gray-900 dark:text-white text-center">
                 {siteConfig.shortName}

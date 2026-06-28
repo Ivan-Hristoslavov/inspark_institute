@@ -50,7 +50,7 @@ const defaultSettings: SettingsState = {
   businessPostcode: "SW1A 1AA",
   businessAddress: "",
   businessPhone: process.env.NEXT_PUBLIC_PHONE_NUMBER || "07944 24 20 79",
-  businessEmail: process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "info@egpaesthetics.co.uk",
+  businessEmail: process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "info@insparkinstitute.co.uk",
 };
 
 export default function ProfilePage() {
@@ -126,7 +126,7 @@ export default function ProfilePage() {
           businessEmail: dbProfile.business_email || process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "",
           phone: dbProfile.phone || process.env.NEXT_PUBLIC_PHONE_NUMBER || "07944 24 20 79",
           whatsapp: (dbProfile as any).whatsapp || dbProfile.phone || process.env.NEXT_PUBLIC_PHONE_NUMBER || "07944 24 20 79",
-          companyName: dbProfile.company_name || "EGP Aesthetics",
+          companyName: dbProfile.company_name || "Inspark Institute",
           companyAddress: dbProfile.company_address || "809 Wandsworth Road, SW8 3JH, London, UK",
           // Preserve existing avatar value from previous state (avatar is not stored in database)
           avatar: prev.avatar || "",
@@ -154,7 +154,7 @@ export default function ProfilePage() {
           email: prev.email || process.env.NEXT_PUBLIC_ADMIN_EMAIL || "",
           businessEmail: prev.businessEmail || process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "",
           phone: prev.phone || process.env.NEXT_PUBLIC_PHONE_NUMBER || "07944 24 20 79",
-          companyName: prev.companyName || "EGP Aesthetics",
+          companyName: prev.companyName || "Inspark Institute",
           companyAddress: prev.companyAddress || "809 Wandsworth Road, SW8 3JH, London, UK",
         }));
       }

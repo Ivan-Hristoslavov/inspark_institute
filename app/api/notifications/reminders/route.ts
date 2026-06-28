@@ -200,7 +200,7 @@ body{margin:0;padding:0;font-family:Georgia,serif;background:#f5f3ef;color:#1c19
 <h1>Appointment Reminder</h1>
 <p>${reminderTime} from now</p>
 <div class="accent"></div>
-<span class="badge">EGP Aesthetics</span>
+<span class="badge">Inspark Institute</span>
 </div>
 <div class="main">
 <p>Hello ${firstName},</p>
@@ -217,7 +217,7 @@ ${booking.address ? `<div class="row">${booking.address}</div>` : ''}
 <p>Need to reschedule? Contact us as soon as possible. We look forward to seeing you.</p>
 
 <div class="ft">
-<p style="margin:0 0 4px"><strong>EGP Aesthetics London</strong></p>
+<p style="margin:0 0 4px"><strong>Inspark Institute</strong></p>
 <p style="margin:0">${contactInfo.phone} · ${contactInfo.email}</p>
 </div>
 </div>
@@ -262,13 +262,13 @@ body{margin:0;padding:0;font-family:Georgia,serif;background:#f5f3ef;color:#1c19
 <p>Your feedback helps us improve and helps others make informed decisions. We'd love to hear about your experience.</p>
 
 <div style="text-align:center;margin:28px 0">
-<a href="https://www.egpaesthetics.co.uk/reviews" class="btn">Leave a Review</a>
+<a href="https://www.insparkinstitute.co.uk/reviews" class="btn">Leave a Review</a>
 </div>
 
 <p>Any questions about your treatment? We're here for you.</p>
 
 <div class="ft">
-<p style="margin:0 0 4px"><strong>EGP Aesthetics London</strong></p>
+<p style="margin:0 0 4px"><strong>Inspark Institute</strong></p>
 <p style="margin:0">${contactInfo.phone} · ${contactInfo.email}</p>
 </div>
 </div>

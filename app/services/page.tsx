@@ -7,7 +7,7 @@ import { typography, layout, textColors } from "@/config/typography";
 import { Search, Filter, ArrowLeft, Info, Plus, Clock, CheckCircle } from "lucide-react";
 import Link from 'next/link';
 import { useServices } from '@/hooks/useServices';
-import { aestheticsColors } from "@/config/colors";
+import { brandColors } from "@/config/colors";
 import { PriceWithDiscount } from "@/components/PriceWithDiscount";
 import { Button, Input, Card, CardBody, CardHeader, Chip, Spinner, Select, SelectItem } from "@heroui/react";
 import { ServiceDetailsModal } from "@/components/ServiceDetailsModal";
@@ -178,7 +178,7 @@ function ServicesPageContent() {
 
         <div className="text-center mb-4 sm:mb-6">
           <p className={`${typography.lead} font-montserrat font-light max-w-2xl mx-auto text-sm sm:text-base`}>
-            Discover our comprehensive range of aesthetic treatments designed to enhance your natural beauty
+            Discover our comprehensive range of treatments designed to enhance your natural beauty
           </p>
         </div>
 
@@ -299,7 +299,7 @@ function ServicesPageContent() {
               }}
               variant="light"
               size="sm"
-              className="text-egp-green dark:text-egp-green-light hover:text-egp-green-dark"
+              className="text-perch dark:text-perch hover:text-fir-1"
             >
               Clear all filters
             </Button>
@@ -322,7 +322,7 @@ function ServicesPageContent() {
                 setSearchTerm('');
                 setCurrentPage(1);
               }}
-              className="bg-egp-green hover:bg-egp-green-dark text-white"
+              className="bg-perch hover:bg-fir-1 text-white"
               size="md"
             >
               Show All Services
@@ -336,12 +336,12 @@ function ServicesPageContent() {
                 className="h-full"
                 shadow="sm"
               >
-                <CardHeader className="bg-egp-beige-lighter dark:bg-egp-green-dark px-2 sm:px-2.5 py-2 sm:py-2.5 border-b border-egp-beige-dark/60 dark:border-egp-green flex flex-col items-center text-center">
+                <CardHeader className="bg-warm-beige-lighter dark:bg-fir-1 px-2 sm:px-2.5 py-2 sm:py-2.5 border-b border-warm-beige-dark/60 dark:border-perch flex flex-col items-center text-center">
                   {/* Badges - Centered row */}
                   <div className="flex flex-wrap justify-center gap-1.5 mb-1.5">
                     <Chip
                       size="sm"
-                      className="bg-egp-green text-white text-[8px] h-5"
+                      className="bg-perch text-white text-[8px] h-5"
                       variant="flat"
                     >
                       {service.category}
@@ -350,7 +350,7 @@ function ServicesPageContent() {
                       size="sm"
                       startContent={<Clock className="w-2.5 h-2.5" />}
                       variant="flat"
-                      className="bg-white/90 dark:bg-egp-green-dark/90 text-egp-green dark:text-white text-[8px] h-5"
+                      className="bg-white/90 dark:bg-fir-1/90 text-perch dark:text-white text-[8px] h-5"
                     >
                       {service.duration} min
                     </Chip>
@@ -389,7 +389,7 @@ function ServicesPageContent() {
                   <div className="space-y-0.5 mb-1.5 text-[9px] text-gray-500 dark:text-gray-400 flex flex-col items-center">
                     {service.requires_consultation && (
                       <div className="flex items-center gap-1">
-                        <CheckCircle className="w-2.5 h-2.5 text-egp-green flex-shrink-0" />
+                        <CheckCircle className="w-2.5 h-2.5 text-perch flex-shrink-0" />
                         <span>Consultation required</span>
                       </div>
                     )}
@@ -417,7 +417,7 @@ function ServicesPageContent() {
                       onPress={() => setSelectedService(serviceId)}
                       variant="bordered"
                       size="sm"
-                      className="flex-1 min-w-0 border-egp-green text-egp-green dark:text-white dark:border-egp-green text-xs h-8"
+                      className="flex-1 min-w-0 border-perch text-perch dark:text-white dark:border-perch text-xs h-8"
                       startContent={<Info className="w-2.5 h-2.5" />}
                     >
                       Details
@@ -425,7 +425,7 @@ function ServicesPageContent() {
                     <Link href={service?.id ? `/book?pendingServiceId=${service.id}` : "/book"}>
                       <Button
                         size="sm"
-                        className="flex-1 w-full min-w-0 bg-egp-green text-white text-xs h-8"
+                        className="flex-1 w-full min-w-0 bg-perch text-white text-xs h-8"
                         startContent={<Plus className="w-2.5 h-2.5" />}
                       >
                         Book
@@ -446,7 +446,7 @@ function ServicesPageContent() {
               isDisabled={currentPage === 1}
               variant="bordered"
               size="sm"
-              className="border-gray-300 dark:border-gray-600 hover:border-egp-green hover:text-egp-green"
+              className="border-gray-300 dark:border-gray-600 hover:border-perch hover:text-perch"
             >
               Previous
             </Button>
@@ -458,8 +458,8 @@ function ServicesPageContent() {
                 size="sm"
                 variant={currentPage === page ? "solid" : "bordered"}
                 className={currentPage === page 
-                  ? 'bg-egp-green text-white' 
-                  : 'border-gray-300 dark:border-gray-600 hover:border-egp-green hover:text-egp-green'
+                  ? 'bg-perch text-white' 
+                  : 'border-gray-300 dark:border-gray-600 hover:border-perch hover:text-perch'
                 }
               >
                 {page}
@@ -471,7 +471,7 @@ function ServicesPageContent() {
               isDisabled={currentPage === totalPages}
               variant="bordered"
               size="sm"
-              className="border-gray-300 dark:border-gray-600 hover:border-egp-green hover:text-egp-green"
+              className="border-gray-300 dark:border-gray-600 hover:border-perch hover:text-perch"
             >
               Next
             </Button>

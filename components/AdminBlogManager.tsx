@@ -127,8 +127,8 @@ function BlogModal({
 
                   <Input
                     label="Author Name"
-                    placeholder="EGP Aesthetics Team"
-                value={formData.author_name || 'EGP Aesthetics Team'}
+                    placeholder="Inspark Institute Team"
+                value={formData.author_name || 'Inspark Institute Team'}
                 onChange={(e) => setFormData((prev: any) => ({ ...prev, author_name: e.target.value }))}
               />
           </div>
@@ -234,7 +234,7 @@ export function AdminBlogManager({ triggerModal }: { triggerModal?: boolean }) {
     read_time_minutes: 5,
     seo_title: null,
     seo_description: null,
-    author_name: "EGP Aesthetics Team",
+    author_name: "Inspark Institute Team",
     display_order: 0,
   };
 

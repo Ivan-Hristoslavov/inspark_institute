@@ -82,7 +82,7 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    const subjectFinal = subject ?? "Test Email from EGP Aesthetics";
+    const subjectFinal = subject ?? "Test Email from Inspark Institute";
     const messageFinal =
       message ?? "This is a test email to verify SMTP configuration.";
 
@@ -110,7 +110,7 @@ body{margin:0;padding:0;font-family:Georgia,serif;background:#f5f3ef;color:#1c19
 <div class="wrap">
 <div class="head">
 <h1>SMTP Test</h1>
-<p style="margin:8px 0 0;font-size:14px;opacity:.9">EGP Aesthetics</p>
+<p style="margin:8px 0 0;font-size:14px;opacity:.9">Inspark Institute</p>
 <div class="line"></div>
 </div>
 <div class="main">

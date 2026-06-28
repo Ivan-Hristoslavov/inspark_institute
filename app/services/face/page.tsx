@@ -51,12 +51,12 @@ export default function FaceTreatmentsPage() {
             {faceServices.map((service) => (
               <div
                 key={service.slug}
-                className="group relative bg-white dark:bg-egp-green border-2 border-gray-300 dark:border-egp-green-dark rounded-xl p-5 hover:border-egp-green dark:hover:border-egp-green hover:shadow-xl transition-all duration-300 flex flex-col"
+                className="group relative bg-white dark:bg-perch border-2 border-gray-300 dark:border-fir-1 rounded-xl p-5 hover:border-perch dark:hover:border-perch hover:shadow-xl transition-all duration-300 flex flex-col"
               >
                 {/* Badges */}
                 <div className="flex gap-2 mb-3">
                   {service.is_featured && (
-                    <span className="px-2 py-0.5 bg-gradient-to-r from-egp-green to-egp-green-dark text-white text-[10px] font-bold rounded-full">
+                    <span className="px-2 py-0.5 bg-gradient-to-r from-perch to-fir-1 text-white text-[10px] font-bold rounded-full">
                       FEATURED
                     </span>
                   )}
@@ -64,7 +64,7 @@ export default function FaceTreatmentsPage() {
 
                 <Link href={`/services/${service.slug}`} className="flex-1">
                   {/* Service Name */}
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-egp-green transition-colors">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-perch transition-colors">
                     {service.name}
                   </h3>
 
@@ -78,7 +78,7 @@ export default function FaceTreatmentsPage() {
                 </Link>
 
                 {/* Price & CTA */}
-                <div className="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-egp-green-dark mt-auto">
+                <div className="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-fir-1 mt-auto">
                   <div>
                     <span className="text-xs text-gray-600 dark:text-gray-400">From</span>
                     <div className="text-lg w-full flex justify-center">
@@ -94,7 +94,7 @@ export default function FaceTreatmentsPage() {
                   </div>
                   <Link
                     href={`/book?serviceId=${service.id}`}
-                    className="flex items-center gap-2 text-egp-green dark:text-white font-semibold hover:text-egp-green-dark hover:gap-3 transition-all"
+                    className="flex items-center gap-2 text-perch dark:text-white font-semibold hover:text-fir-1 hover:gap-3 transition-all"
                   >
                     <span>Book</span>
                     <ArrowRight className="w-4 h-4" />

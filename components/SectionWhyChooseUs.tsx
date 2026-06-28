@@ -2,7 +2,7 @@
 
 import { Award, Shield, Heart, Sparkles, Clock, Star } from "lucide-react";
 import { siteConfig } from "@/config/site";
-import { aestheticsColors } from "@/config/colors";
+import { brandColors } from "@/config/colors";
 import { badgeBackgroundClass } from "@/config/badge-styles";
 import { typography, textColors, layout } from "@/config/typography";
 
@@ -10,7 +10,7 @@ const reasons = [
   {
     icon: Award,
     title: "Expert Practitioners",
-    description: "Highly qualified and experienced aesthetic professionals dedicated to your safety and satisfaction",
+    description: "Highly qualified and experienced professionals dedicated to your safety and satisfaction",
     gradient: "from-blue-500 to-indigo-500",
   },
   {
@@ -22,7 +22,7 @@ const reasons = [
   {
     icon: Heart,
     title: "Personalised Care",
-    description: "Tailored treatment plans designed specifically for your unique aesthetic goals",
+    description: "Tailored treatment plans designed specifically for your unique goals",
     gradient: "from-pink-500 to-rose-500",
   },
   {
@@ -47,7 +47,7 @@ const reasons = [
 
 export default function SectionWhyChooseUs() {
   return (
-    <section className="py-6 sm:py-10 md:py-12 bg-egp-beige-lighter dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <section className="py-6 sm:py-10 md:py-12 bg-warm-beige-lighter dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className={layout.container}>
         {/* Section Header - compact */}
         <div className="text-center mb-4 sm:mb-6 md:mb-8">
@@ -56,7 +56,7 @@ export default function SectionWhyChooseUs() {
             <span>Why Choose Us</span>
           </div>
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-tight text-gray-900 dark:text-white mb-1.5 sm:mb-3 px-2 sm:px-4">
-            Why Choose EGP Aesthetics?
+            Why Choose Inspark Institute?
           </h2>
           <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-2 sm:px-4 leading-relaxed">
             Combining medical expertise with artistic vision to deliver exceptional results
@@ -74,7 +74,7 @@ export default function SectionWhyChooseUs() {
               >
                 <div 
                   className="w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-lg flex items-center justify-center mb-1.5 sm:mb-3 group-hover:scale-105 transition-transform duration-300 shadow-lg mx-auto"
-                  style={{ backgroundColor: aestheticsColors.green.DEFAULT }}
+                  style={{ backgroundColor: brandColors.green.DEFAULT }}
                 >
                   <Icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
                 </div>

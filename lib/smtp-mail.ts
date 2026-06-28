@@ -77,18 +77,18 @@ async function getSenderEmail(): Promise<string> {
 
     if (error) {
       console.warn("Could not fetch admin profile business_email:", error);
-      return adminEmail || "noreply@egpaesthetics.co.uk";
+      return adminEmail || "noreply@insparkinstitute.co.uk";
     }
 
     return (
       profile?.business_email ||
       profile?.email ||
       adminEmail ||
-      "noreply@egpaesthetics.co.uk"
+      "noreply@insparkinstitute.co.uk"
     );
   } catch (error) {
     console.warn("Error getting sender email:", error);
-    return adminEmail || "noreply@egpaesthetics.co.uk";
+    return adminEmail || "noreply@insparkinstitute.co.uk";
   }
 }
 

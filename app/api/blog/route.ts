@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
         read_time_minutes: read_time_minutes || 5,
         seo_title,
         seo_description,
-        author_name: author_name || 'EGP Aesthetics Team',
+        author_name: author_name || 'Inspark Institute Team',
         display_order: display_order || 0,
       }])
       .select()

@@ -903,7 +903,7 @@ function BookingPageContent() {
                           size="sm"
                           variant="flat"
                           startContent={<Clock className="w-3 h-3" />}
-                          className="flex-shrink-0 bg-egp-green/10 text-egp-green dark:bg-egp-green-dark/20 dark:text-white"
+                          className="flex-shrink-0 bg-perch/10 text-perch dark:bg-fir-1/20 dark:text-white"
                         >
                           {item.duration} min
                         </Chip>
@@ -928,7 +928,7 @@ function BookingPageContent() {
                         onPress={() => setServiceInfoModal(item.serviceId)}
                         variant="bordered"
                         size="sm"
-                        className="flex-1 border-egp-green text-egp-green dark:border-egp-green dark:text-white hover:bg-egp-green/10"
+                        className="flex-1 border-perch text-perch dark:border-perch dark:text-white hover:bg-perch/10"
                         startContent={<Info className="w-4 h-4" />}
                       >
                         Details
@@ -956,7 +956,7 @@ function BookingPageContent() {
               onPress={() => setShowServiceSelector(true)}
               variant="secondary"
               size="md"
-              className="flex-1 min-w-0 border-2 border-egp-beige-dark bg-egp-beige hover:bg-egp-beige-dark text-gray-900 dark:bg-egp-beige-darkest dark:text-white dark:border-egp-beige-darker dark:hover:bg-egp-beige-darker text-sm"
+              className="flex-1 min-w-0 border-2 border-warm-beige-dark bg-warm-beige hover:bg-warm-beige-dark text-gray-900 dark:bg-skin-4 dark:text-white dark:border-warm-beige-dark dark:hover:bg-warm-beige-dark text-sm"
               startContent={<Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
             >
               Add
@@ -1187,7 +1187,7 @@ function BookingPageContent() {
                 onClick={() => setServiceSelectorDiscountedOnly(false)}
                 className={`px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium transition-colors ${
                   !serviceSelectorDiscountedOnly
-                    ? "bg-egp-green text-white"
+                    ? "bg-perch text-white"
                     : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
                 }`}
               >
@@ -1198,7 +1198,7 @@ function BookingPageContent() {
                 onClick={() => setServiceSelectorDiscountedOnly(true)}
                 className={`px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium transition-colors ${
                   serviceSelectorDiscountedOnly
-                    ? "bg-egp-green text-white"
+                    ? "bg-perch text-white"
                     : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
                 }`}
               >
@@ -1233,7 +1233,7 @@ function BookingPageContent() {
                         return (
                           <Card
                             key={serviceId}
-                            className="h-full flex flex-col bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-egp-green transition-all"
+                            className="h-full flex flex-col bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-perch transition-all"
                             shadow="lg"
                           >
                             <CardHeader className="bg-gray-50 dark:bg-gray-800 px-3 sm:px-5 py-3 sm:py-4 relative min-h-[120px] sm:min-h-[140px]">
@@ -1307,7 +1307,7 @@ function BookingPageContent() {
                                     }
                                   }}
                                   variant="primary"
-                                  className="w-full bg-egp-green hover:bg-egp-green-dark dark:bg-gray-700 dark:hover:bg-gray-600 text-white"
+                                  className="w-full bg-perch hover:bg-fir-1 dark:bg-gray-700 dark:hover:bg-gray-600 text-white"
                                   size="sm"
                                   startContent={<Plus className="w-4 h-4" />}
                                 >
@@ -1842,10 +1842,10 @@ function BookingPageContent() {
                                       className={`px-2 py-1.5 min-h-[36px] rounded-md text-xs sm:text-sm font-medium transition-all touch-manipulation active:scale-95 border-2 flex items-center justify-center
                               ${
                                 isStartTime
-                                  ? "bg-egp-green hover:bg-egp-green-dark text-white shadow-md border-egp-green font-bold"
+                                  ? "bg-perch hover:bg-fir-1 text-white shadow-md border-perch font-bold"
                                   : isSelected
-                                    ? "bg-egp-green-light dark:bg-egp-green-dark text-white border-egp-green"
-                                    : "border-egp-green dark:border-egp-green-light bg-egp-green/10 dark:bg-egp-green-dark/20 text-egp-green dark:text-white hover:bg-egp-green/20 dark:hover:bg-egp-green-dark/30 hover:border-egp-green-dark"
+                                    ? "bg-perch dark:bg-fir-1 text-white border-perch"
+                                    : "border-perch dark:border-perch bg-perch/10 dark:bg-fir-1/20 text-perch dark:text-white hover:bg-perch/20 dark:hover:bg-fir-1/30 hover:border-fir-1"
                               }
                             `}
                                     >
@@ -2106,8 +2106,8 @@ function BookingPageContent() {
                         className="w-14 h-14 rounded-full object-cover border-2 border-[#e4d9c8] dark:border-gray-600 flex-shrink-0"
                       />
                     ) : (
-                      <div className="w-14 h-14 rounded-full bg-egp-green/10 dark:bg-egp-green/20 flex items-center justify-center flex-shrink-0">
-                        <Shield className="w-7 h-7 text-egp-green dark:text-egp-beige" />
+                      <div className="w-14 h-14 rounded-full bg-perch/10 dark:bg-perch/20 flex items-center justify-center flex-shrink-0">
+                        <Shield className="w-7 h-7 text-perch dark:text-warm-beige" />
                       </div>
                     )}
                     <div className="min-w-0">
@@ -2127,8 +2127,8 @@ function BookingPageContent() {
                 )}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex items-start gap-3">
-                    <div className="p-2 rounded-lg bg-egp-green/10 dark:bg-egp-green/20 flex-shrink-0">
-                      <Calendar className="w-4 h-4 text-egp-green dark:text-egp-beige" />
+                    <div className="p-2 rounded-lg bg-perch/10 dark:bg-perch/20 flex-shrink-0">
+                      <Calendar className="w-4 h-4 text-perch dark:text-warm-beige" />
                     </div>
                     <div>
                       <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
@@ -2140,8 +2140,8 @@ function BookingPageContent() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="p-2 rounded-lg bg-egp-green/10 dark:bg-egp-green/20 flex-shrink-0">
-                      <Clock className="w-4 h-4 text-egp-green dark:text-egp-beige" />
+                    <div className="p-2 rounded-lg bg-perch/10 dark:bg-perch/20 flex-shrink-0">
+                      <Clock className="w-4 h-4 text-perch dark:text-warm-beige" />
                     </div>
                     <div>
                       <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
@@ -2240,7 +2240,7 @@ function BookingPageContent() {
             </Card>
 
             {/* Payment summary + CTA - first on mobile for deposit visibility */}
-            <Card className="border-2 border-egp-green dark:border-egp-beige bg-gradient-to-b from-[#f5f1e9] to-white dark:from-gray-800 dark:to-gray-900 shadow-lg overflow-visible order-1 lg:order-2">
+            <Card className="border-2 border-perch dark:border-warm-beige bg-gradient-to-b from-[#f5f1e9] to-white dark:from-gray-800 dark:to-gray-900 shadow-lg overflow-visible order-1 lg:order-2">
               <CardBody className="p-4 sm:p-5 space-y-3 sm:space-y-4">
                 <div className="flex items-baseline justify-between gap-2">
                   <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
@@ -2254,13 +2254,13 @@ function BookingPageContent() {
                   {totalDuration} min total
                 </p>
                 {depositConfig.enabled && totalAmount > 0 && (
-                  <div id="deposit-option" className="rounded-lg border-2 border-egp-green/30 dark:border-egp-beige/30 bg-white/60 dark:bg-gray-800/40 p-3 sm:p-4 space-y-2 sm:space-y-3 scroll-mt-24">
+                  <div id="deposit-option" className="rounded-lg border-2 border-perch/30 dark:border-warm-beige/30 bg-white/60 dark:bg-gray-800/40 p-3 sm:p-4 space-y-2 sm:space-y-3 scroll-mt-24">
                     <label className="flex items-start gap-3 cursor-pointer group">
                       <input
                         type="checkbox"
                         checked={payDepositOnly}
                         onChange={(e) => setPayDepositOnly(e.target.checked)}
-                        className="mt-0.5 rounded border-gray-300 text-egp-green focus:ring-egp-green shrink-0 w-4 h-4 min-w-[16px]"
+                        className="mt-0.5 rounded border-gray-300 text-perch focus:ring-perch shrink-0 w-4 h-4 min-w-[16px]"
                       />
                       <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">
                         Pay deposit only (rest on arrival)
@@ -2268,7 +2268,7 @@ function BookingPageContent() {
                     </label>
                     {payDepositOnly && (
                       <div className="pl-6 space-y-0.5">
-                        <p className="text-sm font-semibold text-egp-green dark:text-white">
+                        <p className="text-sm font-semibold text-perch dark:text-white">
                           Pay now: £{depositAmount.toFixed(2)}
                         </p>
                         <p className="text-xs text-gray-500 dark:text-gray-400">
@@ -2307,7 +2307,7 @@ function BookingPageContent() {
           <Card className="border border-[#e4d9c8] dark:border-gray-700 shadow-sm overflow-hidden relative">
             {isPaymentProcessing && (
               <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-lg">
-                <Loader2 className="w-10 h-10 text-egp-green dark:text-egp-beige animate-spin" />
+                <Loader2 className="w-10 h-10 text-perch dark:text-warm-beige animate-spin" />
                 <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   Processing payment...
                 </p>

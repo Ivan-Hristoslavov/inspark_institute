@@ -88,7 +88,7 @@ export default function AdminLoginPage() {
             <Shield className="w-8 h-8 text-white" />
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 bg-clip-text text-transparent font-playfair">
-            EGP Aesthetics
+            Inspark Institute
           </h2>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 font-montserrat">
             Admin Panel Access

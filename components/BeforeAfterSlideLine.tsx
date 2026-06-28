@@ -179,7 +179,7 @@ export default function BeforeAfterSlideLine({ items, className = "" }: BeforeAf
   }
 
   return (
-    <section className={`py-8 sm:py-10 md:py-12 bg-egp-beige-lighter dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 ${className}`}>
+    <section className={`py-8 sm:py-10 md:py-12 bg-warm-beige-lighter dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 ${className}`}>
       <div className={layout.container}>
         {/* Section Header */}
         <div className="text-center mb-4 sm:mb-5 md:mb-6">

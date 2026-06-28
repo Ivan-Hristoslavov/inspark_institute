@@ -6,7 +6,7 @@ import { Calendar, Clock, CheckCircle, Star, ArrowRight, Phone } from "lucide-re
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: `Book Treatment Now | ${siteConfig.name}`,
-    description: "Book your treatment now at EGP Aesthetics London. Expert assessment and personalised treatment planning.",
+    description: "Book your treatment now at Inspark Institute. Expert assessment and personalised treatment planning.",
     alternates: {
       canonical: `${siteConfig.url}/services/book-treatment-now`,
     },
@@ -27,7 +27,7 @@ export default function BookTreatmentNowPage() {
     {
       step: "1",
       title: "Welcome & Introduction",
-      description: "Meet your practitioner and discuss your aesthetic goals"
+      description: "Meet your practitioner and discuss your goals"
     },
     {
       step: "2", 
@@ -60,7 +60,7 @@ export default function BookTreatmentNowPage() {
               Book Treatment Now
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8">
-              Start your aesthetic journey with a personalised 30-minute consultation
+              Start your journey with a personalised 30-minute consultation
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -93,7 +93,7 @@ export default function BookTreatmentNowPage() {
                   About This Consultation
                 </h2>
                 <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                  Our consultation is designed to help you understand your aesthetic options and create a personalised treatment plan that aligns with your goals and budget.
+                  Our consultation is designed to help you understand your options and create a personalised treatment plan that aligns with your goals and budget.
                 </p>
                 <div className="flex items-center gap-4 mb-8">
                   <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
@@ -163,7 +163,7 @@ export default function BookTreatmentNowPage() {
               Ready to Start Your Journey?
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8">
-              Book your consultation today and discover how we can help you achieve your aesthetic goals
+              Book your consultation today and discover how we can help you achieve your goals
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -175,7 +175,7 @@ export default function BookTreatmentNowPage() {
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-egp-green hover:bg-egp-green-dark text-white text-lg font-semibold rounded-full transition-all shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-perch hover:bg-fir-1 text-white text-lg font-semibold rounded-full transition-all shadow-lg hover:shadow-xl"
               >
                 <ArrowRight className="w-5 h-5" />
                 View All Services

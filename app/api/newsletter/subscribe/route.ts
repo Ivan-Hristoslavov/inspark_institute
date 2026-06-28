@@ -148,16 +148,16 @@ ${discountCode}
 </ul>
 
 <p style="margin-top:24px;color:${L.text}">We look forward to welcoming you.</p>
-<p style="color:${L.green};font-weight:600">EGP Aesthetics</p>
+<p style="color:${L.green};font-weight:600">Inspark Institute</p>
 </div>
-<div class="email-footer" style="padding:28px 32px;text-align:center;font-size:12px;color:${L.muted};border-top:1px solid ${L.cardBorder};background:${L.wrap}">EGP Aesthetics London</div>
+<div class="email-footer" style="padding:28px 32px;text-align:center;font-size:12px;color:${L.muted};border-top:1px solid ${L.cardBorder};background:${L.wrap}">Inspark Institute</div>
 </div>
 </body>
 </html>
       `;
 
       const emailText = `
-Welcome to EGP Aesthetics!
+Welcome to Inspark Institute!
 
 Thank you for subscribing to our newsletter, ${firstName || "Valued Customer"}!
 
@@ -174,7 +174,7 @@ How to use your discount:
 We look forward to welcoming you to our clinic!
 
 Best regards,
-The EGP Aesthetics Team
+The Inspark Institute Team
       `;
 
       await sendEmail({
