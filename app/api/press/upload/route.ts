@@ -8,7 +8,7 @@ if (!supabaseUrl || !supabaseServiceKey) {
   console.error('Missing required Supabase environment variables');
 }
 
-const supabase = createClient(supabaseUrl!, supabaseServiceKey!);
+const supabase = createClient(supabaseUrl || "", supabaseServiceKey || "");
 
 export async function POST(request: NextRequest) {
   try {

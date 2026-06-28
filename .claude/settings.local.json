@@ -24,7 +24,13 @@
       "Bash(find /Users/ivanivanov -name \"*Beausite*\" -o -name \"*beausite*\" -o -name \"*BEAUSITE*\" 2>/dev/null | head -20)",
       "Bash(cp \"/Users/ivanivanov/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/2894FE63-B216-49FD-98A6-B4763D7DA7EA/BeausiteGrandTrial-Bold.otf\" public/fonts/)",
       "Bash(cp \"/Users/ivanivanov/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/81B257F1-C5E3-45FC-8C0C-5B38864F0CB7/BeausiteGrandTrial-Thin.otf\" public/fonts/)",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "Bash(npm uninstall *)",
+      "Bash(git filter-repo *)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Bash(NEXT_PUBLIC_SUPABASE_URL=\"\" NEXT_PUBLIC_SUPABASE_ANON_KEY=\"\" SUPABASE_SERVICE_ROLE_KEY=\"\" npm run build)",
+      "Bash(xargs sed -i '' 's/process\\\\.env\\\\.NEXT_PUBLIC_SUPABASE_URL!/process.env.NEXT_PUBLIC_SUPABASE_URL || \"\"/g; s/process\\\\.env\\\\.NEXT_PUBLIC_SUPABASE_ANON_KEY!/process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || \"\"/g; s/process\\\\.env\\\\.SUPABASE_SERVICE_ROLE_KEY!/process.env.SUPABASE_SERVICE_ROLE_KEY || \"\"/g')"
     ]
   }
 }

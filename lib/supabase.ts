@@ -1,14 +1,18 @@
-import { createClient } from "@supabase/supabase-js";
+import { createClient, SupabaseClient } from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
 
-// Client for public operations (uses anon key)
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+const placeholder = createClient("https://placeholder.supabase.co", "placeholder");
 
-// Client for admin operations (uses service role key, bypasses RLS)
-export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey);
+export const supabase: SupabaseClient = supabaseUrl
+  ? createClient(supabaseUrl, supabaseAnonKey)
+  : placeholder;
+
+export const supabaseAdmin: SupabaseClient = supabaseUrl
+  ? createClient(supabaseUrl, supabaseServiceKey)
+  : placeholder;
 
 // Types for our database
 export type Database = {
