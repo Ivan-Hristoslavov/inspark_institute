@@ -1,6 +1,8 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { siteConfig } from "@/config/site";
 
 const COMING_SOON = true;
@@ -16,9 +18,15 @@ export const metadata: Metadata = {
   description: siteConfig.seo.defaultDescription,
   keywords: siteConfig.seo.keywords,
   icons: {
-    icon: [{ url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" }],
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
     shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
+  manifest: "/manifest.json",
   openGraph: {
     ...siteConfig.seo.openGraph,
     title: siteConfig.seo.defaultTitle,
@@ -49,7 +57,12 @@ export default async function RootLayout({
       <html suppressHydrationWarning lang="en-GB">
         <head>
           <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <meta name="application-name" content="Inspark Institute" />
+          <meta name="msapplication-TileImage" content="/mstile-150x150.png" />
+          <meta name="msapplication-TileColor" content="#F0DCC8" />
         </head>
         <body
           className={clsx(
@@ -58,6 +71,8 @@ export default async function RootLayout({
           suppressHydrationWarning
         >
           {children}
+          <Analytics />
+          <SpeedInsights />
         </body>
       </html>
     );
@@ -84,6 +99,8 @@ export default async function RootLayout({
         <Providers initialAdminProfile={adminProfile}>
           <LayoutMain adminProfile={adminProfile}>{children}</LayoutMain>
         </Providers>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
