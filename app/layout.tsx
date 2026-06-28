@@ -5,6 +5,8 @@ import { siteConfig } from "@/config/site";
 
 const COMING_SOON = true;
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {

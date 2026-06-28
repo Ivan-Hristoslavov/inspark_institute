@@ -14,7 +14,7 @@ if (!supabaseServiceKey) {
   console.error('Missing SUPABASE_SERVICE_ROLE_KEY environment variable');
 }
 
-const supabase = createClient(supabaseUrl || "", supabaseServiceKey || "");
+const supabase = createClient(supabaseUrl || "https://placeholder.supabase.co", supabaseServiceKey || "placeholder");
 
 // POST - Upload before and after images for gallery
 export async function POST(request: NextRequest) {

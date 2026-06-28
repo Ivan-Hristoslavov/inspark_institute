@@ -5,8 +5,8 @@ import { createClient as createStorageClient } from "@supabase/supabase-js";
 import sharp from "sharp";
 
 const supabaseStorage = createStorageClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || "",
-  process.env.SUPABASE_SERVICE_ROLE_KEY || ""
+  process.env.NEXT_PUBLIC_SUPABASE_URL || "https://placeholder.supabase.co",
+  process.env.SUPABASE_SERVICE_ROLE_KEY || "placeholder"
 );
 
 function extractInvoiceStoragePath(url: string): string | null {
