@@ -30,7 +30,10 @@
       "Bash(git branch *)",
       "Bash(git push *)",
       "Bash(NEXT_PUBLIC_SUPABASE_URL=\"\" NEXT_PUBLIC_SUPABASE_ANON_KEY=\"\" SUPABASE_SERVICE_ROLE_KEY=\"\" npm run build)",
-      "Bash(xargs sed -i '' 's/process\\\\.env\\\\.NEXT_PUBLIC_SUPABASE_URL!/process.env.NEXT_PUBLIC_SUPABASE_URL || \"\"/g; s/process\\\\.env\\\\.NEXT_PUBLIC_SUPABASE_ANON_KEY!/process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || \"\"/g; s/process\\\\.env\\\\.SUPABASE_SERVICE_ROLE_KEY!/process.env.SUPABASE_SERVICE_ROLE_KEY || \"\"/g')"
+      "Bash(xargs sed -i '' 's/process\\\\.env\\\\.NEXT_PUBLIC_SUPABASE_URL!/process.env.NEXT_PUBLIC_SUPABASE_URL || \"\"/g; s/process\\\\.env\\\\.NEXT_PUBLIC_SUPABASE_ANON_KEY!/process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || \"\"/g; s/process\\\\.env\\\\.SUPABASE_SERVICE_ROLE_KEY!/process.env.SUPABASE_SERVICE_ROLE_KEY || \"\"/g')",
+      "Bash(git add *)",
+      "Bash(git restore *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }
