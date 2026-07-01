@@ -9,7 +9,7 @@ const WELCOME_PARAGRAPH =
 const WELCOME_PARAGRAPH_2 =
   "Designed to help passionate aesthetic and massage therapists elevate their skills, build thriving businesses, and unlock their highest level of professional potential and expertise.";
 
-const PRELAUNCH_URL = "https://www.insparkinstitute.com/inspark-prelaunch-welcome?preview=true";
+const PRELAUNCH_URL = "https://www.insparkinstitute.com/inspark-prelaunch-welcome";
 
 const COOKIE_CONSENT_KEY = "inspark_cookie_consent";
 
@@ -61,12 +61,14 @@ function StepInsideButton({ size = "md" }: { size?: "sm" | "md" }) {
       href={PRELAUNCH_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center gap-2 rounded-full bg-burgundy text-white font-semibold hover:bg-burgundy/90 transition-colors shadow-lg shadow-burgundy/20 ${
-        compact ? "px-7 py-3 text-sm" : "px-10 py-4 text-base"
+      className={`group inline-flex items-center justify-center gap-2 rounded-full bg-burgundy text-white font-semibold hover:bg-burgundy/90 transition-colors shadow-lg shadow-burgundy/20 ${
+        compact ? "px-7 py-3 text-sm 2xl:px-10 2xl:py-4 2xl:text-lg" : "px-10 py-4 text-base 2xl:px-12 2xl:py-5 2xl:text-xl"
       }`}
     >
       Step Inside
-      <span aria-hidden="true">&rarr;</span>
+      <span aria-hidden="true" className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+        &rarr;
+      </span>
     </a>
   );
 }
@@ -160,7 +162,7 @@ export function ComingSoonPage() {
               style={{ background: "linear-gradient(180deg,#C99A3E,#E6C97A 45%,#B8862E)" }}
             />
             <div className="relative flex-1 border-r border-white/40 overflow-hidden">
-              <Image src="/images/b_woman_2.jpg" alt="" fill quality={92} className="scale-[2] object-cover object-[90%_45%]" style={{ transformOrigin: "90% 45%" }} sizes="(min-width:1024px) 760px, 50vw" />
+              <Image src="/images/white_girl.jpeg" alt="" fill quality={92} className="scale-[1.9] object-cover object-[45%_50%]" style={{ transformOrigin: "100% 30%" }} sizes="(min-width:1024px) 760px, 50vw" />
             </div>
             <div className="relative flex-1 border-r border-white/40 overflow-hidden">
               <Image src="/images/creamy.jpg" alt="" fill quality={92} className="object-cover object-center scale-[1.8]" style={{ transformOrigin: "50% 50%" }} sizes="(min-width:1024px) 760px, 50vw" />
@@ -171,7 +173,7 @@ export function ComingSoonPage() {
           </div>
 
           {/* 360 badge — dips into the photo strips */}
-          <div className={`absolute top-1/2 right-[17%] -translate-y-1/2 translate-x-1/2 z-20`}>
+          <div className={`absolute top-1/2 right-[20%] -translate-y-1/2 translate-x-1/2 z-20`}>
             <Image
               src="/logos/inspark-360-badge.png"
               alt="Inspark Institute 360"
@@ -196,9 +198,9 @@ export function ComingSoonPage() {
           {/* "Coming Soon your way" script — close to Anna (rotation on inner so anim doesn't override) */}
           <div className={`absolute top-[19%] left-[23%] z-20 ${reveal("anim-fadeUp", "d2")}`}>
             <div style={{ transform: "rotate(-24deg)" }}>
-              <p className="ff-apricots text-perch text-[2.4rem] leading-none text-center">
+              <p className="ff-apricots text-perch text-[2.4rem] 2xl:text-[3rem] leading-none text-center">
                 Coming Soon
-                <span className="block text-burgundy text-[1.9rem] mt-1">your way</span>
+                <span className="block text-burgundy text-[1.9rem] 2xl:text-[2.4rem] mt-1">your way</span>
               </p>
             </div>
           </div>
@@ -212,38 +214,38 @@ export function ComingSoonPage() {
                 alt="Inspark Institute — Elevating Mastery · Igniting Success"
                 width={1280}
                 height={720}
-                className="w-[440px] xl:w-[520px] h-auto"
+                className="w-[440px] xl:w-[520px] 2xl:w-[620px] h-auto"
                 priority
               />
             </div>
 
-            <h1 className={`ff-bodoni text-perch font-semibold leading-[1.05] text-[1.7rem] xl:text-[2.1rem] mb-2 ${reveal("anim-fadeUp", "d4")}`}>
+            <h1 className={`ff-bodoni text-perch font-semibold leading-[1.05] text-[1.7rem] xl:text-[2.1rem] 2xl:text-[2.7rem] mb-2 2xl:mb-4 ${reveal("anim-fadeUp", "d4")}`}>
               Something Unique Is Taking Shape
             </h1>
 
-            <div className={`space-y-1 mb-2 ${reveal("anim-fadeUp", "d5")}`}>
-              <p className="ff-canva text-perch/90 text-sm xl:text-base leading-snug">{WELCOME_PARAGRAPH}</p>
-              <p className="ff-canva text-perch/90 text-sm xl:text-base leading-snug">{WELCOME_PARAGRAPH_2}</p>
+            <div className={`space-y-1 2xl:space-y-2 mb-2 2xl:mb-4 ${reveal("anim-fadeUp", "d5")}`}>
+              <p className="ff-canva text-perch/90 text-sm xl:text-base 2xl:text-xl leading-snug">{WELCOME_PARAGRAPH}</p>
+              <p className="ff-canva text-perch/90 text-sm xl:text-base 2xl:text-xl leading-snug">{WELCOME_PARAGRAPH_2}</p>
             </div>
 
-            <div className={`space-y-1 mb-3 ${reveal("anim-fadeUp", "d6")}`}>
-              <p className="ff-abril text-burgundy text-sm xl:text-base leading-snug">
+            <div className={`space-y-1 2xl:space-y-2 mb-3 2xl:mb-5 ${reveal("anim-fadeUp", "d6")}`}>
+              <p className="ff-abril text-burgundy text-sm xl:text-base 2xl:text-xl leading-snug">
                 Get on the Priority List and be the first to discover what&apos;s coming and gain priority access.
               </p>
-              <p className="ff-canva text-perch text-sm xl:text-base leading-snug">
+              <p className="ff-canva text-perch text-sm xl:text-base 2xl:text-xl leading-snug">
                 (PS: We have a special welcome gift waiting for you after you register.)
               </p>
-              <p className="ff-abril text-burgundy text-sm xl:text-base leading-snug">
+              <p className="ff-abril text-burgundy text-sm xl:text-base 2xl:text-xl leading-snug">
                 Step inside to join the Priority List and receive your welcome gift.
               </p>
             </div>
 
-            <div className={`flex items-center gap-6 ${reveal("anim-fadeUp", "d7")}`}>
+            <div className={`flex items-center gap-6 2xl:gap-8 ${reveal("anim-fadeUp", "d7")}`}>
               <StepInsideButton size="sm" />
-              <p className="ff-bodoni italic text-perch text-base">By Anna Tsankova</p>
+              <p className="ff-bodoni italic text-perch text-base 2xl:text-xl">By Anna Tsankova</p>
             </div>
 
-            <p className="font-body text-[9px] text-perch/30 tracking-[0.2em] uppercase mt-2">
+            <p className="font-body text-[9px] 2xl:text-xs text-perch/30 tracking-[0.2em] uppercase mt-2 2xl:mt-4">
               &copy; {new Date().getFullYear()} Inspark Institute. All rights reserved.
             </p>
           </div>
@@ -274,13 +276,13 @@ export function ComingSoonPage() {
           {/* Skin photo accent — 3 columns */}
           <div className={`grid grid-cols-3 gap-2 w-full max-w-md mb-8 ${reveal("anim-scaleIn", "d4")}`}>
             <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-              <Image src="/images/b_woman_2.jpg" alt="" fill className="object-cover object-[90%_45%] scale-[4]" style={{ transformOrigin: "99% 45%" }} sizes="33vw" />
+              <Image src="/images/white_girl.jpeg" alt="" fill className="object-cover object-[40%_50%] scale-[2.4]" style={{ transformOrigin: "80% 30%" }} sizes="33vw" />
             </div>
             <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
               <Image src="/images/creamy.jpg" alt="" fill className="object-cover object-center scale-[1.8]" style={{ transformOrigin: "50% 50%" }} sizes="33vw" />
             </div>
             <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-              <Image src="/images/b_woman.jpg" alt="" fill className="object-cover object-[90%_90%] scale-[4]" style={{ transformOrigin: "80% 50%" }} sizes="33vw" />
+              <Image src="/images/b_woman.jpg" alt="" fill className="object-cover object-[90%_90%] scale-[5]" style={{ transformOrigin: "80% 50%" }} sizes="33vw" />
             </div>
           </div>
 
