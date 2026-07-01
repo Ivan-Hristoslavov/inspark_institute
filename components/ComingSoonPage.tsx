@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState } from "react";
 
 const WELCOME_PARAGRAPH =
   "Welcome to the complete ecosystem bringing together, for the first time, advanced face massage, anatomy, physiology, science, hands-on mastery, business strategy, and digital marketing into one complete professional journey.";
@@ -9,8 +9,7 @@ const WELCOME_PARAGRAPH =
 const WELCOME_PARAGRAPH_2 =
   "Designed to help passionate aesthetic and massage therapists elevate their skills, build thriving businesses, and unlock their highest level of professional potential and expertise.";
 
-// TODO: replace with the real ClickFunnels form action/webhook URL once the funnel is live.
-const CLICKFUNNELS_ENDPOINT = "";
+const PRELAUNCH_URL = "https://www.insparkinstitute.com/inspark-prelaunch-welcome?preview=true";
 
 const COOKIE_CONSENT_KEY = "inspark_cookie_consent";
 
@@ -55,89 +54,20 @@ function CookieConsent() {
   );
 }
 
-function WaitlistForm({ size = "md" }: { size?: "sm" | "md" }) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [consent, setConsent] = useState(false);
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-
+function StepInsideButton({ size = "md" }: { size?: "sm" | "md" }) {
   const compact = size === "sm";
-
-  async function handleSubmit(e: FormEvent) {
-    e.preventDefault();
-    if (!name.trim() || !email.trim() || !consent) return;
-
-    setStatus("loading");
-    try {
-      if (CLICKFUNNELS_ENDPOINT) {
-        await fetch(CLICKFUNNELS_ENDPOINT, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email }),
-        });
-      } else {
-        // No ClickFunnels endpoint configured yet — log locally so nothing is lost.
-        console.log("Waitlist signup (ClickFunnels not yet connected):", { name, email });
-      }
-      setStatus("success");
-    } catch {
-      setStatus("error");
-    }
-  }
-
-  if (status === "success") {
-    return (
-      <div className={`${compact ? "max-w-xs" : "max-w-sm"} bg-white rounded-2xl shadow-sm border border-skin-1/60 px-6 py-5 text-center`}>
-        <p className="ff-bodoni text-burgundy text-lg font-semibold mb-1">You&apos;re on the list!</p>
-        <p className="font-body text-perch/70 text-sm">Check your inbox for your welcome gift.</p>
-      </div>
-    );
-  }
-
   return (
-    <form
-      onSubmit={handleSubmit}
-      className={`${compact ? "max-w-xs" : "max-w-sm"} w-full bg-white rounded-xl shadow-sm border border-skin-1/60 px-4 py-3 flex flex-col gap-1.5`}
+    <a
+      href={PRELAUNCH_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-flex items-center justify-center gap-2 rounded-full bg-burgundy text-white font-semibold hover:bg-burgundy/90 transition-colors shadow-lg shadow-burgundy/20 ${
+        compact ? "px-7 py-3 text-sm" : "px-10 py-4 text-base"
+      }`}
     >
-      <input
-        type="text"
-        required
-        placeholder="Your name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        className="w-full rounded-lg border border-skin-1 px-3 py-1.5 text-sm font-body text-perch placeholder:text-perch/40 focus:outline-none focus:border-burgundy/50"
-      />
-      <input
-        type="email"
-        required
-        placeholder="Your email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="w-full rounded-lg border border-skin-1 px-3 py-1.5 text-sm font-body text-perch placeholder:text-perch/40 focus:outline-none focus:border-burgundy/50"
-      />
-      <label className="flex items-start gap-2 mt-0.5 cursor-pointer select-none">
-        <input
-          type="checkbox"
-          required
-          checked={consent}
-          onChange={(e) => setConsent(e.target.checked)}
-          className="mt-0.5 w-3.5 h-3.5 accent-burgundy shrink-0"
-        />
-        <span className="text-[11px] leading-snug text-perch/70 font-body">
-          I agree to let Inspark Institute store my name and email to contact me about the launch.
-        </span>
-      </label>
-      <button
-        type="submit"
-        disabled={status === "loading" || !consent}
-        className="w-full rounded-lg bg-burgundy text-white text-sm font-semibold py-1.5 mt-0.5 hover:bg-burgundy/90 transition-colors disabled:opacity-60"
-      >
-        {status === "loading" ? "Joining..." : "Join the Priority List"}
-      </button>
-      {status === "error" && (
-        <p className="text-xs text-burgundy text-center">Something went wrong — please try again.</p>
-      )}
-    </form>
+      Step Inside
+      <span aria-hidden="true">&rarr;</span>
+    </a>
   );
 }
 
@@ -304,13 +234,13 @@ export function ComingSoonPage() {
                 (PS: We have a special welcome gift waiting for you after you register.)
               </p>
               <p className="ff-abril text-burgundy text-sm xl:text-base leading-snug">
-                Leave your name and email below to join and receive your welcome gift.
+                Step inside to join the Priority List and receive your welcome gift.
               </p>
             </div>
 
-            <div className={`flex items-end gap-6 ${reveal("anim-fadeUp", "d7")}`}>
-              <WaitlistForm size="sm" />
-              <p className="ff-bodoni italic text-perch text-base pb-2">By Anna Tsankova</p>
+            <div className={`flex items-center gap-6 ${reveal("anim-fadeUp", "d7")}`}>
+              <StepInsideButton size="sm" />
+              <p className="ff-bodoni italic text-perch text-base">By Anna Tsankova</p>
             </div>
 
             <p className="font-body text-[9px] text-perch/30 tracking-[0.2em] uppercase mt-2">
@@ -367,12 +297,12 @@ export function ComingSoonPage() {
               (PS: We have a special welcome gift waiting for you after you register.)
             </p>
             <p className="ff-abril text-burgundy text-base sm:text-lg leading-snug">
-              Leave your name and email below to join and receive your welcome gift.
+              Step inside to join the Priority List and receive your welcome gift.
             </p>
           </div>
 
           <div className={`flex flex-col items-center mb-10 ${reveal("anim-scaleIn", "d7")}`}>
-            <WaitlistForm size="md" />
+            <StepInsideButton size="md" />
           </div>
 
           {/* Anna cutout + credit */}
