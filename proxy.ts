@@ -1,8 +1,21 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
+// Mirrors the COMING_SOON flag in app/layout.tsx — while true, every route
+// except the Coming Soon landing page ("/") and API routes is blocked with 404.
+const COMING_SOON = true;
+
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // Static assets (images, fonts, favicon, manifest, etc.) always have a file
+  // extension in their last path segment — pages never do. Let those through
+  // untouched so the Coming Soon page's own assets keep loading.
+  const isStaticAsset = /\.[a-zA-Z0-9]+$/.test(pathname);
+
+  if (COMING_SOON && pathname !== "/" && !pathname.startsWith("/api") && !isStaticAsset) {
+    return new NextResponse(null, { status: 404 });
+  }
 
   // Protect admin pages (UI)
   if (pathname.startsWith("/admin")) {
@@ -32,5 +45,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/api/admin/:path*"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
 };

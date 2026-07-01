@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 
 const WELCOME_PARAGRAPH =
   "Welcome to the complete ecosystem bringing together, for the first time, advanced face massage, anatomy, physiology, science, hands-on mastery, business strategy, and digital marketing into one complete professional journey.";
@@ -9,18 +9,135 @@ const WELCOME_PARAGRAPH =
 const WELCOME_PARAGRAPH_2 =
   "Designed to help passionate aesthetic and massage therapists elevate their skills, build thriving businesses, and unlock their highest level of professional potential and expertise.";
 
-function QrPlaceholder({ size = "md" }: { size?: "sm" | "md" }) {
-  const box = size === "sm" ? "w-32 h-32" : "w-36 h-36";
+// TODO: replace with the real ClickFunnels form action/webhook URL once the funnel is live.
+const CLICKFUNNELS_ENDPOINT = "";
+
+const COOKIE_CONSENT_KEY = "inspark_cookie_consent";
+
+function CookieConsent() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const stored = typeof window !== "undefined" ? localStorage.getItem(COOKIE_CONSENT_KEY) : "accepted";
+    if (!stored) setVisible(true);
+  }, []);
+
+  function choose(value: "accepted" | "rejected") {
+    localStorage.setItem(COOKIE_CONSENT_KEY, value);
+    setVisible(false);
+  }
+
+  if (!visible) return null;
+
   return (
-    <div className={`${box} bg-white rounded-2xl shadow-sm flex items-center justify-center border border-skin-1/60`}>
-      <div className="text-center text-perch/40 text-xs px-3">
-        <svg className="w-9 h-9 mx-auto mb-2 text-burgundy/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M13.5 14.625v2.25m0 2.25v-2.25m0 0h2.25m-2.25 0h-1.125M19.5 14.625v4.5m0 0h-4.5" />
-        </svg>
-        QR Code
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-t border-skin-1 px-4 py-3 sm:px-6 sm:py-4">
+      <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
+        <p className="font-body text-xs sm:text-sm text-perch/80 text-center sm:text-left flex-1">
+          We use essential and analytics cookies to run this site and understand how it&apos;s used.
+          You can accept or reject non-essential cookies at any time.
+        </p>
+        <div className="flex gap-2 shrink-0">
+          <button
+            onClick={() => choose("rejected")}
+            className="rounded-lg border border-skin-1 px-4 py-2 text-xs sm:text-sm font-semibold text-perch hover:bg-skin-1/40 transition-colors"
+          >
+            Reject
+          </button>
+          <button
+            onClick={() => choose("accepted")}
+            className="rounded-lg bg-burgundy px-4 py-2 text-xs sm:text-sm font-semibold text-white hover:bg-burgundy/90 transition-colors"
+          >
+            Accept
+          </button>
+        </div>
       </div>
     </div>
+  );
+}
+
+function WaitlistForm({ size = "md" }: { size?: "sm" | "md" }) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const compact = size === "sm";
+
+  async function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    if (!name.trim() || !email.trim() || !consent) return;
+
+    setStatus("loading");
+    try {
+      if (CLICKFUNNELS_ENDPOINT) {
+        await fetch(CLICKFUNNELS_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email }),
+        });
+      } else {
+        // No ClickFunnels endpoint configured yet — log locally so nothing is lost.
+        console.log("Waitlist signup (ClickFunnels not yet connected):", { name, email });
+      }
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  if (status === "success") {
+    return (
+      <div className={`${compact ? "max-w-xs" : "max-w-sm"} bg-white rounded-2xl shadow-sm border border-skin-1/60 px-6 py-5 text-center`}>
+        <p className="ff-bodoni text-burgundy text-lg font-semibold mb-1">You&apos;re on the list!</p>
+        <p className="font-body text-perch/70 text-sm">Check your inbox for your welcome gift.</p>
+      </div>
+    );
+  }
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className={`${compact ? "max-w-xs" : "max-w-sm"} w-full bg-white rounded-xl shadow-sm border border-skin-1/60 px-4 py-3 flex flex-col gap-1.5`}
+    >
+      <input
+        type="text"
+        required
+        placeholder="Your name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        className="w-full rounded-lg border border-skin-1 px-3 py-1.5 text-sm font-body text-perch placeholder:text-perch/40 focus:outline-none focus:border-burgundy/50"
+      />
+      <input
+        type="email"
+        required
+        placeholder="Your email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className="w-full rounded-lg border border-skin-1 px-3 py-1.5 text-sm font-body text-perch placeholder:text-perch/40 focus:outline-none focus:border-burgundy/50"
+      />
+      <label className="flex items-start gap-2 mt-0.5 cursor-pointer select-none">
+        <input
+          type="checkbox"
+          required
+          checked={consent}
+          onChange={(e) => setConsent(e.target.checked)}
+          className="mt-0.5 w-3.5 h-3.5 accent-burgundy shrink-0"
+        />
+        <span className="text-[11px] leading-snug text-perch/70 font-body">
+          I agree to let Inspark Institute store my name and email to contact me about the launch.
+        </span>
+      </label>
+      <button
+        type="submit"
+        disabled={status === "loading" || !consent}
+        className="w-full rounded-lg bg-burgundy text-white text-sm font-semibold py-1.5 mt-0.5 hover:bg-burgundy/90 transition-colors disabled:opacity-60"
+      >
+        {status === "loading" ? "Joining..." : "Join the Priority List"}
+      </button>
+      {status === "error" && (
+        <p className="text-xs text-burgundy text-center">Something went wrong — please try again.</p>
+      )}
+    </form>
   );
 }
 
@@ -38,7 +155,7 @@ export function ComingSoonPage() {
     <>
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
       <link
-        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Caveat:wght@500;600;700&family=Shadows+Into+Light&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Caveat:wght@500;600;700&family=Kalam:wght@400;700&display=swap"
         rel="stylesheet"
       />
       {/* Canva "Student" handwriting font */}
@@ -96,7 +213,7 @@ export function ComingSoonPage() {
           font-display: swap;
         }
         .ff-apricots { font-family: 'Caveat', cursive; }
-        .ff-canva { font-family: 'Shadows Into Light', cursive; }
+        .ff-canva { font-family: 'Kalam', cursive; }
         .ff-bodoni { font-family: 'Bodoni Moda', 'Times New Roman', serif; }
         .ff-abril { font-family: 'Abril Fatface', Georgia, serif; }
       `}</style>
@@ -113,18 +230,18 @@ export function ComingSoonPage() {
               style={{ background: "linear-gradient(180deg,#C99A3E,#E6C97A 45%,#B8862E)" }}
             />
             <div className="relative flex-1 border-r border-white/40 overflow-hidden">
-              <Image src="/images/creamy.jpg" alt="" fill quality={92} className="object-cover object-center scale-110" sizes="(min-width:1024px) 760px, 50vw" />
+              <Image src="/images/b_woman_2.jpg" alt="" fill quality={92} className="scale-[2] object-cover object-[90%_45%]" style={{ transformOrigin: "90% 45%" }} sizes="(min-width:1024px) 760px, 50vw" />
             </div>
             <div className="relative flex-1 border-r border-white/40 overflow-hidden">
-               <Image src="/images/b_woman_2.jpg" alt="" fill quality={92} className="scale-125 object-cover object-[95%_35%]" sizes="(min-width:1024px) 760px, 50vw" />
+              <Image src="/images/creamy.jpg" alt="" fill quality={92} className="object-cover object-center scale-[1.8]" style={{ transformOrigin: "50% 50%" }} sizes="(min-width:1024px) 760px, 50vw" />
             </div>
             <div className="relative flex-1 overflow-hidden">
-              <Image src="/images/b_woman.jpg" alt="" fill quality={92} className="scale-125 object-cover object-[77%_22%]" sizes="(min-width:1024px) 760px, 50vw" />
+              <Image src="/images/b_woman.jpg" alt="" fill quality={92} className="scale-[2.2] object-cover object-[75%_70%]" style={{ transformOrigin: "75% 70%" }} sizes="(min-width:1024px) 760px, 50vw" />
             </div>
           </div>
 
           {/* 360 badge — dips into the photo strips */}
-          <div className={`absolute top-1/2 right-[17%] -translate-y-1/2 translate-x-1/2 z-20 anim-float`}>
+          <div className={`absolute top-1/2 right-[17%] -translate-y-1/2 translate-x-1/2 z-20`}>
             <Image
               src="/logos/inspark-360-badge.png"
               alt="Inspark Institute 360"
@@ -157,44 +274,48 @@ export function ComingSoonPage() {
           </div>
 
           {/* CENTER TEXT BLOCK (logo in-flow at top) */}
-          <div className="relative z-10 ml-[32%] mr-[23%] h-screen flex flex-col justify-center py-6 pl-4 pr-6">
+          <div className="relative z-10 ml-[32%] mr-[23%] h-screen flex flex-col justify-center py-4 pl-4 pr-6">
             {/* Logo */}
-            <div className={`self-center mb-4 ${reveal("anim-scaleIn", "d1")}`}>
+            <div className={`self-center mb-2 ${reveal("anim-scaleIn", "d1")}`}>
               <Image
-                src="/logos/logo-inspark.png"
+                src="/logos/logo-tagline-transparent.png"
                 alt="Inspark Institute — Elevating Mastery · Igniting Success"
-                width={560}
-                height={185}
-                className="w-[440px] xl:w-[520px] h-auto scale-125"
+                width={1280}
+                height={720}
+                className="w-[440px] xl:w-[520px] h-auto"
                 priority
               />
             </div>
 
-            <h1 className={`ff-bodoni text-perch font-semibold leading-[1.06] text-[2rem] xl:text-[2.5rem] mb-3 ${reveal("anim-fadeUp", "d4")}`}>
+            <h1 className={`ff-bodoni text-perch font-semibold leading-[1.05] text-[1.7rem] xl:text-[2.1rem] mb-2 ${reveal("anim-fadeUp", "d4")}`}>
               Something Unique Is Taking Shape
             </h1>
 
-            <div className={`space-y-1.5 mb-4 ${reveal("anim-fadeUp", "d5")}`}>
-              <p className="ff-canva text-perch/90 text-base xl:text-lg leading-snug">{WELCOME_PARAGRAPH}</p>
-              <p className="ff-canva text-perch/90 text-base xl:text-lg leading-snug">{WELCOME_PARAGRAPH_2}</p>
+            <div className={`space-y-1 mb-2 ${reveal("anim-fadeUp", "d5")}`}>
+              <p className="ff-canva text-perch/90 text-sm xl:text-base leading-snug">{WELCOME_PARAGRAPH}</p>
+              <p className="ff-canva text-perch/90 text-sm xl:text-base leading-snug">{WELCOME_PARAGRAPH_2}</p>
             </div>
 
-            <div className={`space-y-2 mb-4 ${reveal("anim-fadeUp", "d6")}`}>
-              <p className="ff-abril text-burgundy text-base xl:text-lg leading-snug">
+            <div className={`space-y-1 mb-3 ${reveal("anim-fadeUp", "d6")}`}>
+              <p className="ff-abril text-burgundy text-sm xl:text-base leading-snug">
                 Get on the Priority List and be the first to discover what&apos;s coming and gain priority access.
               </p>
-              <p className="ff-canva text-perch text-base xl:text-lg leading-snug">
+              <p className="ff-canva text-perch text-sm xl:text-base leading-snug">
                 (PS: We have a special welcome gift waiting for you after you register.)
               </p>
-              <p className="ff-abril text-burgundy text-base xl:text-lg leading-snug">
-                Scan the QR code below to join and receive your welcome gift.
+              <p className="ff-abril text-burgundy text-sm xl:text-base leading-snug">
+                Leave your name and email below to join and receive your welcome gift.
               </p>
             </div>
 
             <div className={`flex items-end gap-6 ${reveal("anim-fadeUp", "d7")}`}>
-              <QrPlaceholder size="sm" />
-              <p className="ff-bodoni italic text-perch text-lg pb-2">By Anna Tsankova</p>
+              <WaitlistForm size="sm" />
+              <p className="ff-bodoni italic text-perch text-base pb-2">By Anna Tsankova</p>
             </div>
+
+            <p className="font-body text-[9px] text-perch/30 tracking-[0.2em] uppercase mt-2">
+              &copy; {new Date().getFullYear()} Inspark Institute. All rights reserved.
+            </p>
           </div>
         </div>
 
@@ -203,11 +324,11 @@ export function ComingSoonPage() {
 
           <div className={`mb-3 ${reveal("anim-scaleIn", "d1")}`}>
             <Image
-              src="/logos/logo-inspark.png"
+              src="/logos/logo-tagline-transparent.png"
               alt="Inspark Institute — Elevating Mastery · Igniting Success"
-              width={520}
-              height={170}
-              className="w-[300px] sm:w-[360px] h-auto mx-auto"
+              width={1280}
+              height={720}
+              className="w-[360px] sm:w-[420px] h-auto mx-auto"
               priority
             />
           </div>
@@ -223,13 +344,13 @@ export function ComingSoonPage() {
           {/* Skin photo accent — 3 columns */}
           <div className={`grid grid-cols-3 gap-2 w-full max-w-md mb-8 ${reveal("anim-scaleIn", "d4")}`}>
             <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-              <Image src="/images/b_woman_2.jpg" alt="" fill className="object-cover" sizes="33vw" />
+              <Image src="/images/b_woman_2.jpg" alt="" fill className="object-cover object-[90%_45%] scale-[4]" style={{ transformOrigin: "99% 45%" }} sizes="33vw" />
             </div>
             <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-              <Image src="/images/creamy.jpg" alt="" fill className="object-cover" sizes="33vw" />
+              <Image src="/images/creamy.jpg" alt="" fill className="object-cover object-center scale-[1.8]" style={{ transformOrigin: "50% 50%" }} sizes="33vw" />
             </div>
             <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-              <Image src="/images/b_woman.jpg" alt="" fill className="object-cover" sizes="33vw" />
+              <Image src="/images/b_woman.jpg" alt="" fill className="object-cover object-[90%_90%] scale-[4]" style={{ transformOrigin: "80% 50%" }} sizes="33vw" />
             </div>
           </div>
 
@@ -246,12 +367,12 @@ export function ComingSoonPage() {
               (PS: We have a special welcome gift waiting for you after you register.)
             </p>
             <p className="ff-abril text-burgundy text-base sm:text-lg leading-snug">
-              Scan the QR code below to join and receive your welcome gift.
+              Leave your name and email below to join and receive your welcome gift.
             </p>
           </div>
 
           <div className={`flex flex-col items-center mb-10 ${reveal("anim-scaleIn", "d7")}`}>
-            <QrPlaceholder size="md" />
+            <WaitlistForm size="md" />
           </div>
 
           {/* Anna cutout + credit */}
@@ -264,7 +385,7 @@ export function ComingSoonPage() {
                 className="object-contain object-bottom"
               />
             </div>
-            <div className="absolute top-2 -right-2 anim-float">
+            <div className="absolute top-2 -right-2">
               <Image
                 src="/logos/inspark-360-badge.png"
                 alt="Inspark Institute 360"
@@ -278,10 +399,12 @@ export function ComingSoonPage() {
             By Anna Tsankova
           </p>
 
-          <p className="font-body text-[10px] text-perch/30 tracking-[0.3em] uppercase mt-10">
-            Inspark Institute &copy; {new Date().getFullYear()}
+          <p className="font-body text-[10px] text-perch/30 tracking-[0.2em] uppercase mt-10 text-center px-6">
+            &copy; {new Date().getFullYear()} Inspark Institute. All rights reserved.
           </p>
         </div>
+
+        <CookieConsent />
       </main>
     </>
   );
