@@ -9,7 +9,7 @@ const WELCOME_PARAGRAPH =
 const WELCOME_PARAGRAPH_2 =
   "Designed to help passionate aesthetic and massage therapists elevate their skills, build thriving businesses, and unlock their highest level of professional potential and expertise.";
 
-const PRELAUNCH_URL = "https://www.insparkinstitute.com/inspark-prelaunch-welcome";
+const PRELAUNCH_URL = "https://go.insparkinstitute.com/inspark-prelaunch-welcome?preview=true";
 
 const COOKIE_CONSENT_KEY = "inspark_cookie_consent";
 
